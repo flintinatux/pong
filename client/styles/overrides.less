@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  .position(fixed, 0, 0, 0, 0);
+  background: white;
+  color: @gray-10;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4rem;
+  line-height: 20/14;
+  margin: 0 auto;
+}
+
+.position(@position: absolute; @top: auto; @right: auto; @bottom: auto; @left: auto) {
+  bottom: @bottom;
+  left: @left;
+  position: @position;
+  right: @right;
+  top: @top;
+}
