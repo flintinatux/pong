@@ -1,0 +1,54 @@
+{
+  "name": "pong",
+  "version": "0.0.0",
+  "description": "ping",
+  "author": "flintinatux",
+  "license": "UNLICENSED",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:markup",
+    "build:markup": "jade client/ -o dist",
+    "build:scripts": "browserify client/app.js | uglifyjs --screw-ie8 > dist/pong.js",
+    "build:styles": "lessc --glob client/app.less | postcss -u autoprefixer | cleancss --s0 > dist/pong.css",
+    "clean": "rm -rf dist/*",
+    "prebuild": "npm run clean && mkdir -p dist",
+    "prewatch": "npm run clean && mkdir -p dist",
+    "prewatch:styles": "npm run build:styles",
+    "serve": "browser-sync start --port 3000 --server dist --files dist/ --no-open --no-notify",
+    "watch": "parallelshell 'npm run watch:markup' 'npm run watch:scripts' 'npm run watch:styles'",
+    "watch:markup": "jade client/ -w -o dist",
+    "watch:scripts": "watchify client/app.js -d -v -o dist/pong.js",
+    "watch:styles": "eye --*glob=client/**/*.less npm run build:styles"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "optional": [
+            "runtime"
+          ]
+        }
+      ]
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.0.3",
+    "babel-runtime": "^5.8.25",
+    "babelify": "^6.4.0",
+    "browser-sync": "^2.9.11",
+    "browserify": "^11.2.0",
+    "classnames": "^2.2.0",
+    "clean-css": "^3.4.6",
+    "eye": "0.0.3",
+    "jade": "^1.11.0",
+    "less": "^2.5.3",
+    "less-plugin-glob": "^1.1.0",
+    "mithril": "^0.2.0",
+    "normalize.css": "^3.0.3",
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^2.2.0",
+    "uglify-js": "^2.5.0",
+    "watchify": "^3.4.0"
+  }
+}
