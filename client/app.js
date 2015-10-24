@@ -1,5 +1,5 @@
 import m from 'mithril';
 
-import Grid from './components/grid';
+import Game from './components/game';
 
-m.mount(document.body, m.component(Grid));
+m.mount(document.body, m.component(Game));
