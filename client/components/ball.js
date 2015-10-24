@@ -6,10 +6,10 @@ export function controller(args, extras) {
 
 export function view(ctrl, { ball }, extras) {
   let style = {
-    height: ball.size() + '%',
-    width:  ball.size() + '%',
-    top:    ball.y() - ball.size()/2 + '%',
-    left:   ball.x() - ball.size()/2 + '%',
+    height: 2*ball.radius + '%',
+    width:  2*ball.radius + '%',
+    top:    ball.y - ball.radius + '%',
+    left:   ball.x - ball.radius + '%',
   };
 
   return m('.ball', { style });
