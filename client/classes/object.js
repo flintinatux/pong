@@ -1,4 +1,5 @@
 import m from 'mithril';
+import classnames from 'classnames';
 import extend from 'lodash/object/extend';
 
 import types from '../data/types';
@@ -9,7 +10,7 @@ function GameObject({ type, config, state }) {
 
   object.view = m.component({ view });
 
-  extend(object, state, { type, update });
+  extend(object, state, { update });
 
   function update() {
     for (let component of types[type].components) {
@@ -18,14 +19,15 @@ function GameObject({ type, config, state }) {
   }
 
   function view() {
+    let className = classnames('object', type);
     let style = {
       height: object.height + '%',
-      width:  object.radius + '%',
+      width:  object.width  + '%',
       left:   object.x + '%',
       top:    object.y + '%'
     };
 
-    return m('div', { style, className: object.type });
+    return m('div', { className, style });
   }
 
   return object;
