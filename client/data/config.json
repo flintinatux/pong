@@ -1,5 +1,5 @@
 {
-  "step": 16,    // ms
+  "step": 17,    // ms
   "height": 60,  // %
   "margin": 1,   // %
   "width": 98    // %

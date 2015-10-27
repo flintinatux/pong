@@ -1,11 +1,15 @@
 {
   "ball": {
+    "collider": true,
     "components": [
+      "ball-physics",
       "movable"
     ]
   },
   "paddle": {
+    "collider": true,
     "components": [
+      "controllable",
       "movable"
     ]
   }

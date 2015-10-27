@@ -5,16 +5,16 @@ import extend from 'lodash/object/extend';
 import types from '../data/types';
 const components = require('../components/*.js', { mode: 'hash' });
 
-function GameObject({ type, config, state }) {
+function GameObject(game, { type, state }) {
   let object = {};
 
   object.view = m.component({ view });
 
-  extend(object, state, { update });
+  extend(object, types[type], state, { type, update });
 
   function update() {
-    for (let component of types[type].components) {
-      components[component].update(object);
+    for (let component of object.components) {
+      components[component].update(game, object);
     }
   }
 
