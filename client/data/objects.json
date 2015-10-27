@@ -1,0 +1,42 @@
+[
+  {
+    "type": "ball",
+    "config": {},
+    "state": {
+      "height": 2,
+      "width": 2,
+      "x": 49,
+      "y": 30,
+      "vx": 0,
+      "vy": 0.3
+    }
+  },
+  {
+    "type": "paddle",
+    "config": {
+      "player": "one"
+    },
+    "state": {
+      "height": 16,
+      "width": 1.25,
+      "x": 2,
+      "y": 23,
+      "vx": 0,
+      "vy": 0
+    }
+  },
+  {
+    "type": "paddle",
+    "config": {
+      "player": "two"
+    },
+    "state": {
+      "height": 16,
+      "width": 1.25,
+      "x": 96.75,
+      "y": 23,
+      "vx": 0,
+      "vy": 0
+    }
+  }
+]

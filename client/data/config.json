@@ -1,14 +1,6 @@
 {
-  "ball": {
-    "radius": 1,
-    "x": 50,
-    "y": 31,
-    "vx": 0,
-    "vy": 0.3
-  },
-  "table": {
-    "height": 60,
-    "margin": 1,
-    "width": 98
-  }
+  "step": 16,    // ms
+  "height": 60,  // %
+  "margin": 1,   // %
+  "width": 98    // %
 }

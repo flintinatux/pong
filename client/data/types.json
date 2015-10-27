@@ -1,0 +1,12 @@
+{
+  "ball": {
+    "components": [
+      "movable"
+    ]
+  },
+  "paddle": {
+    "components": [
+      "movable"
+    ]
+  }
+}
