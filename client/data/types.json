@@ -12,5 +12,9 @@
       "controllable",
       "movable"
     ]
+  },
+  "wall": {
+    "collider": true,
+    "components": []
   }
 }

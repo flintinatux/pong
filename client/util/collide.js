@@ -1,6 +1,6 @@
 import inRange from 'lodash/number/inRange';
 
-function checkCollisions(game, object, handlers) {
+function collide(game, object, handlers) {
   game.objects.forEach(checkCollision);
 
   function checkCollision(other) {
@@ -18,4 +18,4 @@ function collided(A, B) {
   return overlapX && overlapY;
 }
 
-export default checkCollisions;
+export default collide;

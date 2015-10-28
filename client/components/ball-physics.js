@@ -1,11 +1,15 @@
-import checkCollisions from '../util/check-collisions';
+import collide from '../util/collide';
 
 function update(game, object) {
-  let handlers = { paddle };
-  checkCollisions(game, object, handlers);
+  let handlers = { paddle, wall };
+  collide(game, object, handlers);
 
   function paddle(other) {
     object.vx = -object.vx;
+  }
+
+  function wall(other) {
+    object.vy = -object.vy;
   }
 }
 
