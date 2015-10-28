@@ -1,33 +1,29 @@
-import m from 'mithril';
 import classnames from 'classnames';
 import extend from 'lodash/object/extend';
 
 import types from '../data/types';
 const components = require('../components/*.js', { mode: 'hash' });
 
-function GameObject(game, { type, state }) {
+function GameObject({ type, state }) {
   let object = {};
+  let el = document.createElement('div');;
 
-  object.view = m.component({ view });
+  extend(object, { render, type, update }, types[type], state);
 
-  extend(object, types[type], state, { type, update });
+  function render(parent) {
+    if (!el.parentNode) parent.appendChild(el);
+    el.className    = classnames('object', type);
+    el.style.height = object.height + '%';
+    el.style.width  = object.width  + '%';
+    el.style.left   = object.x + '%';
+    el.style.top    = object.y + '%';
+    return el;
+  }
 
-  function update() {
+  function update(game) {
     for (let component of object.components) {
       components[component].update(game, object);
     }
-  }
-
-  function view() {
-    let className = classnames('object', type);
-    let style = {
-      height: object.height + '%',
-      width:  object.width  + '%',
-      left:   object.x + '%',
-      top:    object.y + '%'
-    };
-
-    return m('div', { className, style });
   }
 
   return object;

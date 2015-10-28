@@ -1,6 +1,5 @@
-import m from 'mithril';
 import extend from 'lodash/object/extend';
-import pluck from 'lodash/collection/pluck';
+import pluck  from 'lodash/collection/pluck';
 
 function Game(config) {
   let game = {};
@@ -9,7 +8,6 @@ function Game(config) {
   let lag = 0.0;
 
   game.objects = [];
-  game.view = m.component({ view });
 
   extend(game, { render, start, stop });
 
@@ -22,6 +20,7 @@ function Game(config) {
       el.appendChild(grid);
     }
 
+    for (let object of game.objects) object.render(el);
     return el;
   }
 
@@ -43,21 +42,12 @@ function Game(config) {
       lag -= config.step;
     }
 
-    m.redraw();
+    render();
     id = requestAnimationFrame(tick);
   }
 
   function update() {
-    for (let object of game.objects) {
-      object.update();
-    }
-  }
-
-  function view() {
-    return m('.game', [
-      m('.grid'),
-      pluck(game.objects, 'view')
-    ]);
+    for (let object of game.objects) object.update(game);
   }
 
   return game;

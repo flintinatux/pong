@@ -1,5 +1,3 @@
-import m from 'mithril';
-
 import Game       from './classes/game';
 import GameObject from './classes/object';
 
@@ -8,12 +6,8 @@ import objects    from './data/objects';
 
 let game = window.game = new Game(config);
 
-for (let object of objects) {
-  game.objects.push(new GameObject(game, object));
-}
+for (let object of objects) game.objects.push(new GameObject(object));
 
-m.mount(document.body, game.view);
+document.body.appendChild(game.render());
 
 game.start();
-
-// setTimeout(game.stop, 30000);
