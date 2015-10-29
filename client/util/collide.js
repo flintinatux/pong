@@ -2,10 +2,11 @@ import inRange from 'lodash/number/inRange';
 import max from 'lodash/math/max';
 
 function collide(game, A, handlers) {
+  if (!A.collider) throw new Error(`${A.type} is not a collider`);
   game.objects.forEach(checkCollision);
 
   function checkCollision(B) {
-    if (!A.collider || !B.collider || A === B) return;
+    if (!B.collider || A === B) return;
 
     let Li = inRange(A.x, B.x, B.x + B.width);
     let Ri = inRange(B.x, A.x, A.x + A.width);
