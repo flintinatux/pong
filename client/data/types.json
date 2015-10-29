@@ -9,9 +9,11 @@
   "paddle": {
     "collider": true,
     "components": [
-      "controllable",
+      "paddle-controls",
+      "paddle-physics",
       "movable"
-    ]
+    ],
+    "vmax": 0.4
   },
   "wall": {
     "collider": true,

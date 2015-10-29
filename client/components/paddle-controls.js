@@ -11,10 +11,10 @@ function keyup(event) {
   delete keys[event.keyCode];
 }
 
-function update(game, object) {
-  if (38 in keys) return object.vy = -0.8;
-  if (40 in keys) return object.vy = 0.8;
-  object.vy = 0;
+function update(game, paddle) {
+  if (38 in keys) return paddle.vy = -paddle.vmax;
+  if (40 in keys) return paddle.vy = paddle.vmax;
+  paddle.vy = 0;
 }
 
 export default { update };

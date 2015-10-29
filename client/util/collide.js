@@ -8,15 +8,15 @@ function collide(game, A, handlers) {
   function checkCollision(B) {
     if (!B.collider || A === B) return;
 
-    let Li = inRange(A.x, B.x, B.x + B.width);
-    let Ri = inRange(B.x, A.x, A.x + A.width);
-    let Ti = inRange(A.y, B.y, B.y + B.height);
-    let Bi = inRange(B.y, A.y, A.y + A.height);
+    let Li = inRange(A.x, B.x, B.x + B.w);
+    let Ri = inRange(B.x, A.x, A.x + A.w);
+    let Ti = inRange(A.y, B.y, B.y + B.h);
+    let Bi = inRange(B.y, A.y, A.y + A.h);
 
-    let Lo = B.x + B.width  - A.x;
-    let Ro = A.x + A.width  - B.x;
-    let To = B.y + B.height - A.y;
-    let Bo = A.y + A.height - B.y;
+    let Lo = B.x + B.w - A.x;
+    let Ro = A.x + A.w - B.x;
+    let To = B.y + B.h - A.y;
+    let Bo = A.y + A.h - B.y;
 
     let side = (function() {
       switch (true) {
@@ -33,7 +33,8 @@ function collide(game, A, handlers) {
       }
     })();
 
-    if (side) handlers[B.type](side, B);
+    if (side && typeof handlers[B.type] === 'function')
+      handlers[B.type](side, B);
   }
 }
 

@@ -13,8 +13,8 @@ function GameObject({ type, state }) {
   function render(parent) {
     if (!el.parentNode) parent.appendChild(el);
     el.className    = classnames('object', type);
-    el.style.height = object.height + '%';
-    el.style.width  = object.width  + '%';
+    el.style.height = object.h + '%';
+    el.style.width  = object.w + '%';
     el.style.left   = object.x + '%';
     el.style.top    = object.y + '%';
     return el;
