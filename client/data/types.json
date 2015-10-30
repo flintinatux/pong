@@ -2,26 +2,39 @@
   "ball": {
     "collider": true,
     "components": [
-      "ball-physics",
+      "ball/physics",
       "movable"
-    ]
+    ],
+    "vmax": 0.8
   },
   "computer": {
     "proto": "paddle",
     "components": [
-      "paddle-ai",
-      "paddle-physics",
+      "paddle/ai",
+      "paddle/physics",
       "movable"
+    ]
+  },
+  "goal": {
+    "collider": true,
+    "components": [
+      "scoregiver"
     ]
   },
   "paddle": {
     "collider": true,
     "components": [
-      "paddle-controls",
-      "paddle-physics",
+      "paddle/controls",
+      "paddle/physics",
       "movable"
     ],
     "vmax": 0.4
+  },
+  "score": {
+    "components": [
+      "scorekeeper"
+    ],
+    "content": 0
   },
   "wall": {
     "collider": true,

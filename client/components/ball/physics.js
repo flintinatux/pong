@@ -1,17 +1,18 @@
-import collide from '../util/collide';
+import collide from '../../util/collide';
 
 const maxTheta = 0.25 * Math.PI;
 
 function update(game, ball) {
-  let handlers = { paddle, wall, computer: paddle };
-  collide(game, ball, handlers);
+  if (stopped()) start();
+
+  collide(game, ball, { paddle, wall, computer: paddle });
 
   function horizontal(side) {
     return ['left', 'right'].indexOf(side) > -1;
   }
 
   function paddle(side, paddle) {
-    if (vertical(side)) return ball.vy = -ball.vy;
+    if (vertical(side)) return ball.vy *= -1;
     if (side === 'left'  && ball.vx > 0) return;
     if (side === 'right' && ball.vx < 0) return;
     if (horizontal(side)) {
@@ -24,13 +25,21 @@ function update(game, ball) {
     }
   }
 
+  function start() {
+    ball.vx = Math.sign(Math.random() - 0.5) * ball.vmax;
+  }
+
+  function stopped() {
+    return ball.vx === 0 && ball.vy === 0;
+  }
+
   function vertical(side) {
     return ['top', 'bottom'].indexOf(side) > -1;
   }
 
   function wall(side, wall) {
-    if (horizontal(side)) return ball.vx = -ball.vx;
-    if (vertical(side))   return ball.vy = -ball.vy;
+    if (horizontal(side)) return ball.vx *= -1;
+    if (vertical(side))   return ball.vy *= -1;
   }
 }
 

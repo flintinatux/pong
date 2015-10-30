@@ -1,6 +1,6 @@
 import find from 'lodash/collection/find';
 
-import collide from '../util/collide';
+import collide from '../../util/collide';
 
 const difficulty = 0.9;
 let factor, sign;

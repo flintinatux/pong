@@ -1,15 +1,25 @@
 import extend from 'lodash/object/extend';
 import pluck  from 'lodash/collection/pluck';
 
-function Game(config) {
+import GameObject from './object';
+
+import config  from '../data/config';
+import objects from '../data/objects';
+
+function Game() {
   let game = {};
 
   let el, id, last;
   let lag = 0.0;
 
-  game.objects = [];
+  game.objects = objects.map(GameObject);
+  game.scores  = { one: 0, two: 0 };
 
-  extend(game, { render, start, stop });
+  extend(game, { render, reset, start, stop });
+
+  function reset() {
+    for (let object of game.objects) object.reset(el);
+  }
 
   function render() {
     if (!el) {

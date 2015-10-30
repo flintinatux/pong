@@ -1,5 +1,4 @@
-import collide from '../util/collide';
-import move    from '../util/move';
+import collide from '../../util/collide';
 
 function update(game, paddle) {
   let { y } = paddle;
