@@ -3,7 +3,7 @@ import collide from '../util/collide';
 const maxTheta = 0.25 * Math.PI;
 
 function update(game, ball) {
-  let handlers = { paddle, wall };
+  let handlers = { paddle, wall, computer: paddle };
   collide(game, ball, handlers);
 
   function horizontal(side) {

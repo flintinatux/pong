@@ -5,12 +5,14 @@ import types from '../data/types';
 const components = require('../components/*.js', { mode: 'hash' });
 
 function GameObject({ type, state }) {
-  let object = {};
-  let el = document.createElement('div');;
+  let el, object = {};
+  let { proto } = types[type];
+  if (proto) object.__proto__ = new GameObject({ type: proto });
 
   extend(object, { render, type, update }, types[type], state);
 
   function render(parent) {
+    if (!el) el = document.createElement('div');
     if (!el.parentNode) parent.appendChild(el);
     el.className    = classnames('object', type);
     el.style.height = object.h + '%';

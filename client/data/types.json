@@ -6,6 +6,14 @@
       "movable"
     ]
   },
+  "computer": {
+    "proto": "paddle",
+    "components": [
+      "paddle-ai",
+      "paddle-physics",
+      "movable"
+    ]
+  },
   "paddle": {
     "collider": true,
     "components": [
