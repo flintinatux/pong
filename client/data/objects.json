@@ -13,6 +13,7 @@
   {
     "type": "paddle",
     "state": {
+      "player": "one",
       "h": 10,
       "w": 1.25,
       "x": 2,
@@ -24,6 +25,7 @@
   {
     "type": "paddle",
     "state": {
+      "player": "two",
       "h": 10,
       "w": 1.25,
       "x": 96.75,

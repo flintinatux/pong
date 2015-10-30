@@ -1,5 +1,10 @@
 const keys = {};
 
+const controls = {
+  one: { up: 87, down: 83 },
+  two: { up: 38, down: 40 }
+}
+
 window.addEventListener('keydown', keydown);
 window.addEventListener('keyup',   keyup);
 
@@ -12,8 +17,9 @@ function keyup(event) {
 }
 
 function update(game, paddle) {
-  if (38 in keys) return paddle.vy = -paddle.vmax;
-  if (40 in keys) return paddle.vy = paddle.vmax;
+  let c = controls[paddle.player];
+  if (c.up   in keys) return paddle.vy = -paddle.vmax;
+  if (c.down in keys) return paddle.vy =  paddle.vmax;
   paddle.vy = 0;
 }
 

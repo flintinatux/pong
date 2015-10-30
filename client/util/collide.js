@@ -1,8 +1,9 @@
+import assert  from 'assert';
 import inRange from 'lodash/number/inRange';
-import max from 'lodash/math/max';
+import max     from 'lodash/math/max';
 
 function collide(game, A, handlers) {
-  if (!A.collider) throw new Error(`${A.type} is not a collider`);
+  assert(A.collider, `${A.type} must be a collider`);
   game.objects.forEach(checkCollision);
 
   function checkCollision(B) {
