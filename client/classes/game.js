@@ -17,10 +17,6 @@ function Game() {
 
   extend(game, { render, reset, start, stop });
 
-  function reset() {
-    for (let object of game.objects) object.reset(el);
-  }
-
   function render() {
     if (!el) {
       el = document.createElement('div');
@@ -32,6 +28,10 @@ function Game() {
 
     for (let object of game.objects) object.render(el);
     return el;
+  }
+
+  function reset() {
+    for (let object of game.objects) object.reset(el);
   }
 
   function start() {

@@ -3,8 +3,6 @@ import collide from '../../util/collide';
 const maxTheta = 0.25 * Math.PI;
 
 function update(game, ball) {
-  if (stopped()) start();
-
   collide(game, ball, { paddle, wall, computer: paddle });
 
   function horizontal(side) {
@@ -12,9 +10,10 @@ function update(game, ball) {
   }
 
   function paddle(side, paddle) {
-    if (vertical(side)) return ball.vy *= -1;
-    if (side === 'left'  && ball.vx > 0) return;
-    if (side === 'right' && ball.vx < 0) return;
+    if (side === 'top'    && ball.vy < 0) return ball.vy *= -1;
+    if (side === 'bottom' && ball.vy > 0) return ball.vy *= -1;
+    if (side === 'left'   && ball.vx > 0) return;
+    if (side === 'right'  && ball.vx < 0) return;
     if (horizontal(side)) {
       let { vx, vy } = ball;
       let v = (vx**2 + vy**2)**0.5;
@@ -23,14 +22,6 @@ function update(game, ball) {
       ball.vx = v * Math.cos(theta) * -(Math.sign(vx));
       ball.vy = v * Math.sin(theta);
     }
-  }
-
-  function start() {
-    ball.vx = Math.sign(Math.random() - 0.5) * ball.vmax;
-  }
-
-  function stopped() {
-    return ball.vx === 0 && ball.vy === 0;
   }
 
   function vertical(side) {

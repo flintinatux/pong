@@ -2,6 +2,7 @@
   "ball": {
     "collider": true,
     "components": [
+      "ball/countdown",
       "ball/physics",
       "movable"
     ],
