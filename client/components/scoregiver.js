@@ -1,4 +1,4 @@
-import collide from '../util/collide';
+import collide from '../lib/collide';
 
 function update(game, goal) {
   collide(game, goal, { ball });

@@ -1,6 +1,7 @@
 function update(game, object) {
-  object.x += object.vx;
-  object.y += object.vy;
+  let { next } = object;
+  next.x += next.vx;
+  next.y += next.vy;
 }
 
 export default { update };

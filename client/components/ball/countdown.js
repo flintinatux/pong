@@ -1,11 +1,9 @@
 import config from '../../data/config';
 
 let seconds = Math.floor(1000 / config.step);
-let max     = 6 * seconds;
+let max     = 5 * seconds;
 let count   = 0;
 let direction = Math.sign(Math.random() - 0.5);
-
-console.log(max);
 
 function update(game, ball) {
   if (stopped()) {
@@ -15,7 +13,7 @@ function update(game, ball) {
 
   function countdown() {
     count -= 1;
-    ball.content = count ? Math.floor(count / seconds) : '';
+    ball.content = count ? Math.ceil(count / seconds) : '';
     if (count === 0) return start();
   }
 

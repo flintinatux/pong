@@ -1,5 +1,6 @@
 {
   "ball": {
+    "parent": "object",
     "collider": true,
     "components": [
       "ball/countdown",
@@ -9,7 +10,7 @@
     "vmax": 0.8
   },
   "computer": {
-    "proto": "paddle",
+    "parent": "paddle",
     "components": [
       "paddle/ai",
       "paddle/physics",
@@ -17,27 +18,50 @@
     ]
   },
   "goal": {
+    "parent": "object",
     "collider": true,
     "components": [
       "scoregiver"
+    ],
+    "properties": [
+      "player"
+    ]
+  },
+  "object": {
+    "properties": [
+      "h",
+      "w",
+      "x",
+      "y",
+      "vx",
+      "vy"
     ]
   },
   "paddle": {
+    "parent": "object",
     "collider": true,
     "components": [
       "paddle/controls",
       "paddle/physics",
       "movable"
     ],
+    "properties": [
+      "player"
+    ],
     "vmax": 0.4
   },
   "score": {
+    "parent": "object",
     "components": [
       "scorekeeper"
+    ],
+    "properties": [
+      "player"
     ],
     "content": 0
   },
   "wall": {
+    "parent": "object",
     "collider": true,
     "components": []
   }

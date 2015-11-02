@@ -1,15 +1,23 @@
 import classnames from 'classnames';
 import extend from 'lodash/object/extend';
 
-import types from '../data/types';
+import types from '../lib/types';
+
 const components = require('../components/**/*.js', { mode: 'hash' });
 
 function GameObject({ type, state }) {
-  let el, object = {};
-  let { proto } = types[type];
-  if (proto) object.__proto__ = new GameObject({ type: proto });
+  let el,
+      current = extend({}, state),
+      next    = extend({}, state),
+      object  = { current, next };
 
-  extend(object, { render, reset, type, update }, types[type], state);
+  extend(object, { render, reset, swap, type, update }, types[type]);
+
+  for (let property of types[type].properties) {
+    Object.defineProperty(object, property, { get, set });
+    function get()    { return current[property];    }
+    function set(val) { return next[property] = val; }
+  }
 
   function render(parent) {
     if (!el) el = document.createElement('div');
@@ -24,7 +32,11 @@ function GameObject({ type, state }) {
   }
 
   function reset() {
-    extend(object, state);
+    extend(next, state);
+  }
+
+  function swap() {
+    extend(current, next);
   }
 
   function update(game) {

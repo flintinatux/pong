@@ -3,7 +3,6 @@ import inRange from 'lodash/number/inRange';
 import max     from 'lodash/math/max';
 
 function collide(game, A, handlers) {
-  assert(A.collider, `${A.type} must be a collider`);
   game.objects.forEach(checkCollision);
 
   function checkCollision(B) {

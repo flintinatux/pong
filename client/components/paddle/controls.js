@@ -1,8 +1,8 @@
 const keys = {};
 
 const controls = {
-  one: { up: 87, down: 83 },
-  two: { up: 38, down: 40 }
+  one: { up: 87, down: 83 },  // w/s
+  two: { up: 38, down: 40 }   // up/down arrows
 }
 
 window.addEventListener('keydown', keydown);

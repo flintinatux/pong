@@ -58,6 +58,7 @@ function Game() {
 
   function update() {
     for (let object of game.objects) object.update(game);
+    for (let object of game.objects) object.swap();
   }
 
   return game;

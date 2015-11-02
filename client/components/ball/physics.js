@@ -1,4 +1,4 @@
-import collide from '../../util/collide';
+import collide from '../../lib/collide';
 
 const maxTheta = 0.25 * Math.PI;
 
