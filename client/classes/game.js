@@ -1,5 +1,4 @@
 import extend from 'lodash/object/extend';
-import pluck  from 'lodash/collection/pluck';
 
 import GameObject from './object';
 

@@ -14,10 +14,8 @@ function randomize() {
 function update(game, paddle) {
   collide(game, paddle, { ball: randomize });
   let ball = find(game.objects, { type: 'ball' });
-  let by = ball.y + ball.h / 2;
-  let py = paddle.y + paddle.h / 2;
   let delta = sign * factor * paddle.h;
-  paddle.vy = Math.sign(by - (py + delta)) * difficulty * paddle.vmax;
+  paddle.vy = Math.sign(ball.y - (paddle.y + delta)) * difficulty * paddle.vmax;
 }
 
 export default { update };

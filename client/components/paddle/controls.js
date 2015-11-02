@@ -1,7 +1,7 @@
 const keys = {};
 
 const controls = {
-  one: { up: 87, down: 83 },  // w/s
+  one: { up: 87, down: 83 },  // w/s keys
   two: { up: 38, down: 40 }   // up/down arrows
 }
 

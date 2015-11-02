@@ -1,5 +1,6 @@
 import classnames from 'classnames';
-import extend from 'lodash/object/extend';
+import extend     from 'lodash/object/extend';
+import template   from 'lodash/string/template';
 
 import types from '../lib/types';
 
@@ -7,16 +8,25 @@ const components = require('../components/**/*.js', { mode: 'hash' });
 
 function GameObject({ type, state }) {
   let el,
-      current = extend({}, state),
-      next    = extend({}, state),
-      object  = { current, next };
+      proto   = types[type],
+      current = extend({}, proto.properties, state),
+      next    = extend({}, proto.properties, state),
+      object  = { __proto__: proto, current, next };
 
-  extend(object, { render, reset, swap, type, update }, types[type]);
+  extend(object, { render, reset, swap, type, update });
 
-  for (let property of types[type].properties) {
+  for (let property in proto.properties) {
     Object.defineProperty(object, property, { get, set });
     function get()    { return current[property];    }
     function set(val) { return next[property] = val; }
+  }
+
+  for (let property in proto.computed) {
+    let expression = template(proto.computed[property]);
+    function get() { return expression(this); }
+    Object.defineProperty(object,  property, { get });
+    Object.defineProperty(current, property, { get });
+    Object.defineProperty(next,    property, { get });
   }
 
   function render(parent) {
@@ -26,8 +36,8 @@ function GameObject({ type, state }) {
     el.className    = classnames('object', type);
     el.style.height = object.h + '%';
     el.style.width  = object.w + '%';
-    el.style.left   = object.x + '%';
-    el.style.top    = object.y + '%';
+    el.style.left   = object.l + '%';
+    el.style.top    = object.t + '%';
     return el;
   }
 

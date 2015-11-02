@@ -17,7 +17,7 @@ function update(game, ball) {
     if (horizontal(side)) {
       let { vx, vy } = ball;
       let v = (vx**2 + vy**2)**0.5;
-      let dy = (ball.y + ball.h/2) - (paddle.y + paddle.h/2);
+      let dy = ball.y - paddle.y;
       let theta = maxTheta * 2 * dy / paddle.h;
       ball.vx = v * Math.cos(theta) * -(Math.sign(vx));
       ball.vy = v * Math.sin(theta);
