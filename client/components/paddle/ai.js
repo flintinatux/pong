@@ -2,7 +2,7 @@ import find from 'lodash/collection/find';
 
 import collide from '../../lib/collide';
 
-const difficulty = 0.9;
+const difficulty = 1.0;
 let factor, sign;
 randomize();
 
@@ -15,7 +15,7 @@ function update(game, paddle) {
   collide(game, paddle, { ball: randomize });
   let ball = find(game.objects, { type: 'ball' });
   let delta = sign * factor * paddle.h;
-  paddle.vy = Math.sign(ball.y - (paddle.y + delta)) * difficulty * paddle.vmax;
+  paddle.ay = Math.sign(ball.y - (paddle.y + delta)) * difficulty * paddle.amax;
 }
 
 export default { update };

@@ -18,9 +18,9 @@ function keyup(event) {
 
 function update(game, paddle) {
   let c = controls[paddle.player];
-  if (c.up   in keys) return paddle.vy = -paddle.vmax;
-  if (c.down in keys) return paddle.vy =  paddle.vmax;
-  paddle.vy = 0;
+  if (c.up   in keys) return paddle.ay = -paddle.amax;
+  if (c.down in keys) return paddle.ay =  paddle.amax;
+  paddle.ay = 0;
 }
 
 export default { update };
