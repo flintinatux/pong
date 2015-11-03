@@ -2,6 +2,7 @@
   {
     "type": "ball",
     "state": {
+      "player": null,
       "h": 2,
       "w": 2,
       "x": 50,

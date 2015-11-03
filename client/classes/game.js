@@ -1,4 +1,4 @@
-import extend from 'lodash/object/extend';
+import _ from 'lodash';
 
 import GameObject from './object';
 
@@ -14,7 +14,7 @@ function Game() {
   game.objects = objects.map(GameObject);
   game.scores  = { one: 0, two: 0 };
 
-  extend(game, { render, reset, start, stop });
+  _.extend(game, { render, reset, start, stop });
 
   function render() {
     if (!el) {

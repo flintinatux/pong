@@ -6,6 +6,12 @@
       "ball/physics",
       "movable"
     ],
+    "properties": {
+      "player": null
+    },
+    "variations": [
+      "player"
+    ],
     "collider": true,
     "vmax": 0.8
   },
@@ -45,6 +51,7 @@
       "t": "${y - h/2}",
       "b": "${y + h/2}"
     },
+    "variations": [],
     "amax": 0,
     "vmax": 0
   },
@@ -58,6 +65,9 @@
     "properties": {
       "player": "one"
     },
+    "variations": [
+      "player"
+    ],
     "collider": true,
     "amax": 0.075,
     "vmax": 0.4

@@ -1,6 +1,5 @@
+import _ from 'lodash';
 import classnames from 'classnames';
-import extend     from 'lodash/object/extend';
-import template   from 'lodash/string/template';
 
 import types from '../lib/types';
 
@@ -9,11 +8,11 @@ const components = require('../components/**/*.js', { mode: 'hash' });
 function GameObject({ type, state }) {
   let el,
       proto   = types[type],
-      current = extend({}, proto.properties, state),
-      next    = extend({}, proto.properties, state),
+      current = _.extend({}, proto.properties, state),
+      next    = _.extend({}, proto.properties, state),
       object  = { __proto__: proto, current, next };
 
-  extend(object, { render, reset, swap, type, update });
+  _.extend(object, { render, reset, swap, type, update });
 
   for (let property in proto.properties) {
     Object.defineProperty(object, property, { get, set });
@@ -22,7 +21,7 @@ function GameObject({ type, state }) {
   }
 
   for (let property in proto.computed) {
-    let expression = template(proto.computed[property]);
+    let expression = _.template(proto.computed[property]);
     function get() { return expression(this); }
     Object.defineProperty(object,  property, { get });
     Object.defineProperty(current, property, { get });
@@ -33,7 +32,9 @@ function GameObject({ type, state }) {
     if (!el) el = document.createElement('div');
     if (!el.parentNode) parent.appendChild(el);
     if (object.content !== undefined) el.innerHTML = object.content;
-    el.className    = classnames('object', type);
+    let variations = _.values(_.pick(object, object.variations));
+
+    el.className    = classnames('object', type, variations);
     el.style.height = object.h + '%';
     el.style.width  = object.w + '%';
     el.style.left   = object.l + '%';
@@ -42,11 +43,11 @@ function GameObject({ type, state }) {
   }
 
   function reset() {
-    extend(next, state);
+    _.extend(next, state);
   }
 
   function swap() {
-    extend(current, next);
+    _.extend(current, next);
   }
 
   function update(game) {

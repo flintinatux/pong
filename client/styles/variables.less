@@ -12,27 +12,34 @@
 @gray-80:   lighten(@gray-base, 80%);
 @gray-90:   lighten(@gray-base, 90%);
 
-@brand-blue:  #0c273a;
-@brand-red:   #f1685e;
-@brand-white: #fefffa;
+@bg-blue:   #01008C; // #337ab7; // #0c273a;
+@bg-green:  #01A30F;
+@bg-red:    #A32100; // #d9534f; // #f1685e;
+@bg-yellow: #615600; // #f0ad4e;
+@bg-white:  #fefffa;
 
-@translucent: rgba(255,255,255,0.7);
+@border-blue:     darken(spin(@bg-blue,   -10), 15%);
+@border-green:    darken(spin(@bg-green,  -10), 15%);
+@border-red:      darken(spin(@bg-red,    -10), 15%);
+@border-yellow:   darken(spin(@bg-yellow, -10), 15%);
 
-@state-complete-text:   #3c763d;
-@state-complete-bg:     #dff0d8;
-@state-complete-border: darken(spin(@state-complete-bg, -10), 5%);
+// @translucent: rgba(255,255,255,0.7);
 
-@state-info-text:       #31708f;
-@state-info-bg:         #d9edf7;
-@state-info-border:     darken(spin(@state-info-bg, -10), 7%);
+// @state-complete-text:   #3c763d;
+// @state-complete-bg:     #dff0d8;
+// @state-complete-border: darken(spin(@state-complete-bg, -10), 5%);
 
-@state-active-text:     #8a6d3b;
-@state-active-bg:       #fcf8e3;
-@state-active-border:   darken(spin(@state-active-bg, -10), 5%);
+// @state-info-text:       #31708f;
+// @state-info-bg:         #d9edf7;
+// @state-info-border:     darken(spin(@state-info-bg, -10), 7%);
 
-@state-failed-text:     #a94442;
-@state-failed-bg:       #f2dede;
-@state-failed-border:   darken(spin(@state-failed-bg, -10), 5%);
+// @state-active-text:     #8a6d3b;
+// @state-active-bg:       #fcf8e3;
+// @state-active-border:   darken(spin(@state-active-bg, -10), 5%);
+
+// @state-failed-text:     #a94442;
+// @state-failed-bg:       #f2dede;
+// @state-failed-border:   darken(spin(@state-failed-bg, -10), 5%);
 
 // icons
 

@@ -1,4 +1,17 @@
+.ownable() {
+  &.one {
+    background: @bg-blue;
+    border: 0.1rem solid @border-blue;
+  }
+
+  &.two {
+    background: @bg-red;
+    border: 0.1rem solid @border-red;
+  }
+}
+
 .ball {
+  .ownable();
   background: @gray-10;
   border-radius: 50%;
   color: white;
@@ -11,6 +24,7 @@
 }
 
 .paddle, .computer {
+  .ownable();
   background: @gray-20;
   border-radius: 0.4rem;
 }
@@ -26,4 +40,6 @@
 
 .wall {
   background: @gray-90;
+  // border-bottom: 0.1rem solid @border-green;
+  // border-top: 0.1rem solid @border-green;
 }

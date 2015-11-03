@@ -1,6 +1,4 @@
-import assert  from 'assert';
-import inRange from 'lodash/number/inRange';
-import max     from 'lodash/math/max';
+import _ from 'lodash'
 
 function collide(game, A, handlers) {
   game.objects.forEach(checkCollision);
@@ -8,10 +6,10 @@ function collide(game, A, handlers) {
   function checkCollision(B) {
     if (!B.collider || A === B) return;
 
-    let Li = inRange(A.l, B.l, B.r);
-    let Ri = inRange(B.l, A.l, A.r);
-    let Ti = inRange(A.t, B.t, B.b);
-    let Bi = inRange(B.t, A.t, A.b);
+    let Li = _.inRange(A.l, B.l, B.r);
+    let Ri = _.inRange(B.l, A.l, A.r);
+    let Ti = _.inRange(A.t, B.t, B.b);
+    let Bi = _.inRange(B.t, A.t, A.b);
 
     let Lo = B.r - A.l;
     let Ro = A.r - B.l;

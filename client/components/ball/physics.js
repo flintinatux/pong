@@ -10,6 +10,7 @@ function update(game, ball) {
   }
 
   function paddle(side, paddle) {
+    ball.player = paddle.player;
     if (side === 'top'    && ball.vy < 0) return ball.vy *= -1;
     if (side === 'bottom' && ball.vy > 0) return ball.vy *= -1;
     if (side === 'left'   && ball.vx > 0) return;
