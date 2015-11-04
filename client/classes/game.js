@@ -46,6 +46,8 @@ function Game() {
     lag += next - last;
     last = next;
 
+    if (lag > config.maxLag) lag = config.maxLag;
+
     while (lag > config.step) {
       update();
       lag -= config.step;
