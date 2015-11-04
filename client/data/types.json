@@ -21,7 +21,9 @@
       "paddle/ai",
       "paddle/physics",
       "movable"
-    ]
+    ],
+    "vin":  0.4,
+    "vout": 0.1
   },
   "goal": {
     "parent": "object",

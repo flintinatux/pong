@@ -16,12 +16,11 @@ function update(game, ball) {
     if (side === 'left'   && ball.vx > 0) return;
     if (side === 'right'  && ball.vx < 0) return;
     if (horizontal(side)) {
-      let { vx, vy } = ball;
-      let v = (vx**2 + vy**2)**0.5;
+      let { vx, vmax } = ball;
       let dy = ball.y - paddle.y;
       let theta = maxTheta * 2 * dy / paddle.h;
-      ball.vx = v * Math.cos(theta) * -(Math.sign(vx));
-      ball.vy = v * Math.sin(theta);
+      ball.vx = vmax * Math.cos(theta) * -(Math.sign(vx));
+      ball.vy = vmax * Math.sin(theta);
     }
   }
 

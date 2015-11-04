@@ -15,6 +15,7 @@ function update(game, paddle) {
   collide(game, paddle, { ball: randomize });
   let ball = _.find(game.objects, { type: 'ball' });
   let delta = sign * factor * paddle.h;
+  paddle.vmax = ball.player !== paddle.player ? paddle.vin : paddle.vout;
   paddle.ay = Math.sign(ball.y - (paddle.y + delta)) * difficulty * paddle.amax;
 }
 
