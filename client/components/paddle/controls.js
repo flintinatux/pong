@@ -1,9 +1,9 @@
-const keys = {};
-
 const controls = {
   one: { up: 87, down: 83 },  // w/s keys
   two: { up: 38, down: 40 }   // up/down arrows
 }
+
+const keys = {};
 
 window.addEventListener('keydown', keydown);
 window.addEventListener('keyup',   keyup);
@@ -16,11 +16,16 @@ function keyup(event) {
   delete keys[event.keyCode];
 }
 
-function update(game, paddle) {
+function PaddleControls(game, paddle) {
   let c = controls[paddle.player];
-  if (c.up   in keys) return paddle.ay = -paddle.amax;
-  if (c.down in keys) return paddle.ay =  paddle.amax;
-  paddle.ay = 0;
+
+  function update() {
+    if (c.up   in keys) return paddle.ay = -paddle.amax;
+    if (c.down in keys) return paddle.ay =  paddle.amax;
+    paddle.ay = 0;
+  }
+
+  return { update };
 }
 
-export default { update };
+export default PaddleControls;

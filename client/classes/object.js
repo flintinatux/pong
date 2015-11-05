@@ -5,14 +5,18 @@ import types from '../lib/types';
 
 const components = require('../components/**/*.js', { mode: 'hash' });
 
-function GameObject({ type, state }) {
+function GameObject(game, { type, state }) {
   let el,
       proto   = types[type],
       current = _.extend({}, proto.properties, state),
       next    = _.extend({}, proto.properties, state),
-      object  = { __proto__: proto, current, next };
+      object  = { __proto__: proto, current, next, components: [] };
 
   _.extend(object, { render, reset, swap, type, update });
+
+  for (let component of proto.components) {
+    object.components.push(components[component](game, object));
+  }
 
   for (let property in proto.properties) {
     Object.defineProperty(object, property, { get, set });
@@ -50,10 +54,8 @@ function GameObject({ type, state }) {
     _.extend(current, next);
   }
 
-  function update(game) {
-    for (let component of object.components) {
-      components[component].update(game, object);
-    }
+  function update() {
+    for (let component of object.components) component.update();
   }
 
   return object;

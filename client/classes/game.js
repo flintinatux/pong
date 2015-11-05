@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import events from 'events';
 
 import GameObject from './object';
 
@@ -11,8 +12,8 @@ function Game() {
   let el, id, last;
   let lag = 0.0;
 
-  game.objects = objects.map(GameObject);
-  game.scores  = { one: 0, two: 0 };
+  game.vent    = new events.EventEmitter;
+  game.objects = objects.map(_.partial(GameObject, game));
 
   _.extend(game, { render, reset, start, stop });
 
@@ -58,7 +59,7 @@ function Game() {
   }
 
   function update() {
-    for (let object of game.objects) object.update(game);
+    for (let object of game.objects) object.update();
     for (let object of game.objects) object.swap();
   }
 

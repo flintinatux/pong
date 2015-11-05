@@ -16,3 +16,5 @@ window.addEventListener('keydown', function(e) {
     game.stop();
   }
 })
+
+game.start();

@@ -1,7 +1,12 @@
 import move from '../lib/move';
 
-function update(game, object) {
-  move(object);
+function Movable(game, object) {
+
+  function update() {
+    move(object);
+  }
+
+  return { update };
 }
 
-export default { update };
+export default Movable;
