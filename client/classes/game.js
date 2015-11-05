@@ -27,6 +27,8 @@ function Game() {
     }
 
     for (let object of game.objects) object.render(el);
+
+    game.vent.emit('rendered', { time: performance.now() });
     return el;
   }
 
@@ -37,10 +39,12 @@ function Game() {
   function start() {
     last = performance.now();
     id = requestAnimationFrame(tick);
+    game.vent.emit('started', { time: last });
   }
 
   function stop() {
     cancelAnimationFrame(id);
+    game.vent.emit('stopped', { time: performance.now() });
   };
 
   function tick(next) {

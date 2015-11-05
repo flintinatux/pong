@@ -4,7 +4,7 @@ let game = window.game = new Game();
 
 document.body.appendChild(game.render());
 
-let paused = true;
+let paused;
 
 window.addEventListener('keydown', function(e) {
   if (e.keyCode !== 32) return;

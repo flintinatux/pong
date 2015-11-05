@@ -84,6 +84,13 @@
     },
     "content": 0
   },
+  "stats": {
+    "parent": "object",
+    "components": [
+      "statistician"
+    ],
+    "content": "fps: 60"
+  },
   "wall": {
     "parent": "object",
     "collider": true
