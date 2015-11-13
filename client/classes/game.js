@@ -15,7 +15,12 @@ function Game() {
   game.vent    = new events.EventEmitter;
   game.objects = objects.map(_.partial(GameObject, game));
 
-  _.extend(game, { render, reset, start, stop });
+  _.extend(game, { render, start, stop });
+
+  function invoke(action) {
+    let i = game.objects.length;
+    while (i--) game.objects[i][action]();
+  }
 
   function render() {
     if (!el) {
@@ -30,10 +35,6 @@ function Game() {
 
     game.vent.emit('rendered', { time: performance.now() });
     return el;
-  }
-
-  function reset() {
-    for (let object of game.objects) object.reset(el);
   }
 
   function start() {
@@ -63,8 +64,8 @@ function Game() {
   }
 
   function update() {
-    for (let object of game.objects) object.update();
-    for (let object of game.objects) object.swap();
+    invoke('update');
+    invoke('swap');
   }
 
   return game;
