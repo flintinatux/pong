@@ -36,7 +36,7 @@ function BallPhysics(game, ball) {
     if (vertical(side))   return ball.vy *= -1;
   }
 
-  return { update };
+  return update;
 }
 
 export default BallPhysics;

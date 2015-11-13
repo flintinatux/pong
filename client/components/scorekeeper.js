@@ -11,7 +11,7 @@ function Scorekeeper(game, object) {
     object.content = score;
   }
 
-  return { update };
+  return update;
 }
 
 export default Scorekeeper;

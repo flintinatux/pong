@@ -56,7 +56,7 @@ function GameObject(game, { type, state }) {
 
   function update() {
     let i = object.components.length;
-    while (i--) object.components[i].update();
+    while (i--) object.components[i]();
   }
 
   return object;

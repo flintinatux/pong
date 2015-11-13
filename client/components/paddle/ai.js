@@ -24,7 +24,7 @@ function PaddleAI(game, paddle) {
     followBall();
   }
 
-  return { update };
+  return update;
 }
 
 export default PaddleAI;

@@ -20,7 +20,7 @@ function PaddleControls(game, paddle) {
     paddle.ay = 0;
   }
 
-  return { update };
+  return update;
 }
 
 export default PaddleControls;

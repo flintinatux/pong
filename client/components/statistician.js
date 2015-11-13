@@ -26,7 +26,7 @@ function Statistician(game, object) {
     object.content = `fps: ${_.round(fps, 3)}`;
   }
 
-  return { update };
+  return update;
 }
 
 export default Statistician;

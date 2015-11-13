@@ -33,7 +33,7 @@ function BallCountdown(game, ball) {
     }
   }
 
-  return { update };
+  return update;
 }
 
 export default BallCountdown;

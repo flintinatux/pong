@@ -13,7 +13,7 @@ function Scoregiver(game, object) {
     collide(game, object, { ball });
   }
 
-  return { update };
+  return update;
 }
 
 export default Scoregiver;

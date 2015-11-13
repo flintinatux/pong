@@ -16,7 +16,7 @@ function PaddlePhysics(game, paddle) {
       next.ay = current.vy = 0;
   }
 
-  return { update };
+  return update;
 }
 
 export default PaddlePhysics;

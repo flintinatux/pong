@@ -6,7 +6,7 @@ function Movable(game, object) {
     move(object);
   }
 
-  return { update };
+  return update;
 }
 
 export default Movable;
