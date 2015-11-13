@@ -26,7 +26,6 @@ function Statistician(game, object) {
     object.content = `fps: ${_.round(fps, 3)}`;
   }
 
-  console.log(deltas);
   return { update };
 }
 

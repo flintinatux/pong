@@ -32,7 +32,7 @@
     }
   },
   {
-    "type": "computer",
+    "type": "paddle",
     "state": {
       "player": "one",
       "h": 10,

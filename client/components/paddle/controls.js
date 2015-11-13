@@ -1,8 +1,3 @@
-const controls = {
-  one: { up: 87, down: 83 },  // w/s keys
-  two: { up: 38, down: 40 }   // up/down arrows
-}
-
 const keys = {};
 
 window.addEventListener('keydown', keydown);
@@ -17,7 +12,7 @@ function keyup(event) {
 }
 
 function PaddleControls(game, paddle) {
-  let c = controls[paddle.player];
+  let c = paddle.controls[paddle.player];
 
   function update() {
     if (c.up   in keys) return paddle.ay = -paddle.amax;

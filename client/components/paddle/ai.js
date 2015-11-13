@@ -2,10 +2,9 @@ import _ from 'lodash';
 
 import collide from '../../lib/collide';
 
-const difficulty = 1.0;
-
 function PaddleAI(game, paddle) {
   let factor, sign;
+  let { difficulty, maxFactor } = paddle;
   randomize();
 
   function followBall() {
@@ -16,7 +15,7 @@ function PaddleAI(game, paddle) {
   }
 
   function randomize() {
-    factor = Math.random() * 0.35;
+    factor = Math.random() * maxFactor;
     sign   = Math.sign(Math.random() - 0.5);
   }
 

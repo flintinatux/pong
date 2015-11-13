@@ -14,10 +14,6 @@ function GameObject(game, { type, state }) {
 
   _.extend(object, { render, reset, swap, type, update });
 
-  for (let component of proto.components) {
-    object.components.push(components[component](game, object));
-  }
-
   for (let property in proto.properties) {
     Object.defineProperty(object, property, { get, set });
     function get()    { return current[property];    }
@@ -30,6 +26,10 @@ function GameObject(game, { type, state }) {
     Object.defineProperty(object,  property, { get });
     Object.defineProperty(current, property, { get });
     Object.defineProperty(next,    property, { get });
+  }
+
+  for (let component of proto.components) {
+    object.components.push(components[component](game, object));
   }
 
   function render(parent) {

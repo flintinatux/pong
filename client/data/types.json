@@ -22,7 +22,9 @@
       "paddle/physics",
       "movable"
     ],
-    "vin":  0.4,
+    "difficulty": 1.2,
+    "maxFactor": 0.35,
+    "vin": 0.4,
     "vout": 0.1
   },
   "goal": {
@@ -38,10 +40,10 @@
   "object": {
     "components": [],
     "properties": {
-      "h":  0,
-      "w":  0,
-      "x":  0,
-      "y":  0,
+      "h": 0,
+      "w": 0,
+      "x": 0,
+      "y": 0,
       "vx": 0,
       "vy": 0,
       "ax": 0,
@@ -71,6 +73,16 @@
       "player"
     ],
     "collider": true,
+    "controls": {
+      "one": {
+        "up":   87,  // W
+        "down": 83   // S
+      },
+      "two": {
+        "up":   38,  // up-arrow
+        "down": 40   // down-arrow
+      }
+    },
     "amax": 0.075,
     "vmax": 0.4
   },
