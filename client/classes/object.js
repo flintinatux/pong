@@ -29,7 +29,7 @@ function GameObject(game, { type, state }) {
   }
 
   for (let component of proto.components) {
-    object.components.push(components[component](game, object));
+    object.components.unshift(components[component](game, object));
   }
 
   function render(parent) {
@@ -55,7 +55,8 @@ function GameObject(game, { type, state }) {
   }
 
   function update() {
-    for (let component of object.components) component.update();
+    let i = object.components.length;
+    while (i--) object.components[i].update();
   }
 
   return object;
