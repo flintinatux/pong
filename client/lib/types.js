@@ -6,15 +6,13 @@ let types = {};
 
 Object.keys(data).forEach(parseType);
 
-function parseType(type) {
-  if (!types[type]) {
-    types[type] = _.merge({}, data[type]);
-    if (types[type].parent) {
-      let parent = parseType(types[type].parent);
-      types[type] = _.merge({}, parent, types[type]);
-    }
+function parseType(name) {
+  if (!types[name]) {
+    let type = data[name];
+    let parent = type.parent ? parseType(type.parent) : {};
+    types[name] = _.merge({}, parent, type);
   }
-  return types[type];
+  return types[name];
 }
 
 export default types;
