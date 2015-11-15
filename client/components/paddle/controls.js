@@ -23,4 +23,4 @@ function PaddleControls(game, paddle) {
   return update;
 }
 
-export default PaddleControls;
+module.exports = PaddleControls;

@@ -36,4 +36,4 @@ function collide(game, A, handlers) {
   }
 }
 
-export default collide;
+module.exports = collide;

@@ -1,4 +1,4 @@
-import _ from 'lodash';
+const _ = require('lodash');
 
 const sample = 30;
 
@@ -29,4 +29,4 @@ function Statistician(game, object) {
   return update;
 }
 
-export default Statistician;
+module.exports = Statistician;

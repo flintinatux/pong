@@ -11,4 +11,4 @@ function move(object) {
   next.y += next.vy;
 }
 
-export default move;
+module.exports = move;

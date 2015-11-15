@@ -1,4 +1,4 @@
-import config from '../../data/config';
+const config = require('../../data/config');
 
 const seconds = Math.floor(1000 / config.step);
 const max     = 5 * seconds;
@@ -36,4 +36,4 @@ function BallCountdown(game, ball) {
   return update;
 }
 
-export default BallCountdown;
+module.exports = BallCountdown;

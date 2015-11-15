@@ -1,6 +1,6 @@
-import _ from 'lodash';
+const _ = require('lodash');
 
-import collide from '../../lib/collide';
+const collide = require('../../lib/collide');
 
 function PaddleAI(game, paddle) {
   let factor, sign;
@@ -27,4 +27,4 @@ function PaddleAI(game, paddle) {
   return update;
 }
 
-export default PaddleAI;
+module.exports = PaddleAI;

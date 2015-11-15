@@ -1,4 +1,4 @@
-import Game from './classes/game';
+const Game = require('./classes/game');
 
 let game = window.game = new Game();
 

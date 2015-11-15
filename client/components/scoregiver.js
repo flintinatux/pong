@@ -1,6 +1,6 @@
-import _ from 'lodash';
+const _ = require('lodash');
 
-import collide from '../lib/collide';
+const collide = require('../lib/collide');
 
 function Scoregiver(game, object) {
 
@@ -16,4 +16,4 @@ function Scoregiver(game, object) {
   return update;
 }
 
-export default Scoregiver;
+module.exports = Scoregiver;

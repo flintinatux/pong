@@ -1,7 +1,7 @@
-import _ from 'lodash';
-import classnames from 'classnames';
+const _ = require('lodash');
+const classnames = require('classnames');
 
-import types from '../lib/types';
+const types = require('../lib/types');
 
 const components = require('../components/**/*.js', { mode: 'hash' });
 
@@ -62,4 +62,4 @@ function GameObject(game, { type, state }) {
   return object;
 }
 
-export default GameObject;
+module.exports = GameObject;

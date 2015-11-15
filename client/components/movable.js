@@ -1,4 +1,4 @@
-import move from '../lib/move';
+const move = require('../lib/move');
 
 function Movable(game, object) {
 
@@ -9,4 +9,4 @@ function Movable(game, object) {
   return update;
 }
 
-export default Movable;
+module.exports = Movable;

@@ -1,4 +1,4 @@
-import collide from '../../lib/collide';
+const collide = require('../../lib/collide');
 
 const maxTheta = 0.25 * Math.PI;
 
@@ -39,4 +39,4 @@ function BallPhysics(game, ball) {
   return update;
 }
 
-export default BallPhysics;
+module.exports = BallPhysics;

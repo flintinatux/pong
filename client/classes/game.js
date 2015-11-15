@@ -1,10 +1,10 @@
-import _ from 'lodash';
-import events from 'events';
+const _ = require('lodash');
+const events = require('events');
 
-import GameObject from './object';
+const GameObject = require('./object');
 
-import config  from '../data/config';
-import objects from '../data/objects';
+const config  = require('../data/config');
+const objects = require('../data/objects');
 
 function Game() {
   let game = {};
@@ -71,4 +71,4 @@ function Game() {
   return game;
 }
 
-export default Game;
+module.exports = Game;

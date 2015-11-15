@@ -1,6 +1,6 @@
-import _ from 'lodash';
+const _ = require('lodash');
 
-import data from '../data/types';
+const data = require('../data/types');
 
 let types = {};
 
@@ -15,4 +15,4 @@ function parseType(name) {
   return types[name];
 }
 
-export default types;
+module.exports = types;

@@ -1,5 +1,5 @@
-import collide from '../../lib/collide';
-import move    from '../../lib/move';
+const collide = require('../../lib/collide');
+const move    = require('../../lib/move');
 
 function PaddlePhysics(game, paddle) {
   let { current, next } = paddle;
@@ -19,4 +19,4 @@ function PaddlePhysics(game, paddle) {
   return update;
 }
 
-export default PaddlePhysics;
+module.exports = PaddlePhysics;

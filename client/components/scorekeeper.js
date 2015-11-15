@@ -14,4 +14,4 @@ function Scorekeeper(game, object) {
   return update;
 }
 
-export default Scorekeeper;
+module.exports = Scorekeeper;
