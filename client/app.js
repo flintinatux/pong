@@ -17,4 +17,4 @@ window.addEventListener('keydown', function(e) {
   }
 })
 
-// game.start();
+game.start();
