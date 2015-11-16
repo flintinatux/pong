@@ -2,8 +2,8 @@
   "ball": {
     "parent": "object",
     "components": [
-      "ball/countdown",
-      "ball/physics",
+      "ball.countdown",
+      "ball.physics",
       "movable"
     ],
     "properties": {
@@ -18,8 +18,8 @@
   "computer": {
     "parent": "paddle",
     "components": [
-      "paddle/ai",
-      "paddle/physics",
+      "paddle.ai",
+      "paddle.physics",
       "movable"
     ],
     "difficulty": 1.2,
@@ -62,8 +62,8 @@
   "paddle": {
     "parent": "object",
     "components": [
-      "paddle/controls",
-      "paddle/physics",
+      "paddle.controls",
+      "paddle.physics",
       "movable"
     ],
     "properties": {

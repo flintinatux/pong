@@ -1,9 +1,8 @@
 const _ = require('lodash');
 const classnames = require('classnames');
 
+const components = require('../components');
 const types = require('../lib/types');
-
-const components = require('../components/**/*.js', { mode: 'hash' });
 
 function GameObject(game, { type, state }) {
   let el,
@@ -29,7 +28,7 @@ function GameObject(game, { type, state }) {
   }
 
   for (let component of proto.components) {
-    object.components.unshift(components[component](game, object));
+    object.components.unshift(_.get(components, component)(game, object));
   }
 
   function render(parent) {
