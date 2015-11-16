@@ -21,10 +21,10 @@ function GameObject(game, { type, state }) {
 
   for (let property in proto.computed) {
     let expression = _.template(proto.computed[property]);
-    function get() { return expression(this); }
-    Object.defineProperty(object,  property, { get });
-    Object.defineProperty(current, property, { get });
-    Object.defineProperty(next,    property, { get });
+    let descriptor = { get() { return expression(this) } };
+    Object.defineProperty(object,  property, descriptor);
+    Object.defineProperty(current, property, descriptor);
+    Object.defineProperty(next,    property, descriptor);
   }
 
   for (let component of proto.components) {
