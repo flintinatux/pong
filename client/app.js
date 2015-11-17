@@ -15,6 +15,4 @@ window.addEventListener('keydown', function(e) {
     running = true;
     game.start();
   }
-})
-
-game.start();
+});

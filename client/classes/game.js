@@ -2,20 +2,22 @@ const _ = require('lodash');
 const events = require('events');
 
 const GameObject = require('./object');
+const Loop = require('./loop');
 
-const config  = require('../data/config');
 const objects = require('../data/objects');
 
 function Game() {
-  let game = {};
-
-  let el, id, last;
-  let lag = 0.0;
+  let el,
+      game = { render },
+      loop = new Loop;
 
   game.vent    = new events.EventEmitter;
   game.objects = objects.map(_.partial(GameObject, game));
 
-  _.extend(game, { render, start, stop });
+  _.extend(game, _.pick(loop, 'start', 'stop'));
+
+  loop.on('render', render);
+  loop.on('update', update);
 
   function invoke(action) {
     let i = game.objects.length;
@@ -35,32 +37,6 @@ function Game() {
 
     game.vent.emit('rendered', { time: performance.now() });
     return el;
-  }
-
-  function start() {
-    last = performance.now();
-    id = requestAnimationFrame(tick);
-    game.vent.emit('started', { time: last });
-  }
-
-  function stop() {
-    cancelAnimationFrame(id);
-    game.vent.emit('stopped', { time: performance.now() });
-  };
-
-  function tick(next) {
-    lag += next - last;
-    last = next;
-
-    if (lag > config.maxLag) lag = config.maxLag;
-
-    while (lag > config.step) {
-      update();
-      lag -= config.step;
-    }
-
-    render();
-    id = requestAnimationFrame(tick);
   }
 
   function update() {
