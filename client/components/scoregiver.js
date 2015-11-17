@@ -5,7 +5,7 @@ const collide = require('../lib/collide');
 function Scoregiver(game, object) {
 
   function ball(side, ball) {
-    game.vent.emit('score goal', _.pick(object, 'player'));
+    game.emit('score goal', _.pick(object, 'player'));
     ball.reset();
   }
 

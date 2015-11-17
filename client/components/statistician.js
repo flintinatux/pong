@@ -8,8 +8,8 @@ function Statistician(game, object) {
       last   = performance.now(),
       tail   = 0;
 
-  game.vent.on('rendered', calcFPS);
-  game.vent.on('started',  started);
+  game.on('rendered', calcFPS);
+  game.on('started',  started);
 
   function calcFPS({ time }) {
     deltas[tail] = time - last;

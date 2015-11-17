@@ -1,17 +1,15 @@
 const _ = require('lodash');
-const classnames = require('classnames');
 
 const components = require('../components');
 const types = require('../lib/types');
 
 function GameObject(game, { type, state }) {
-  let el,
-      proto   = types[type],
+  let proto   = types[type],
       current = _.extend({}, proto.properties, state),
       next    = _.extend({}, proto.properties, state),
-      object  = { __proto__: proto, current, next, components: [] };
+      object  = { __proto__: proto, components: [], current, next };
 
-  _.extend(object, { render, reset, swap, type, update });
+  _.extend(object, { reset, swap, type, update });
 
   for (let property in proto.properties) {
     Object.defineProperty(object, property, { get, set });
@@ -29,20 +27,6 @@ function GameObject(game, { type, state }) {
 
   for (let component of proto.components) {
     object.components.unshift(_.get(components, component)(game, object));
-  }
-
-  function render(parent) {
-    if (!el) el = document.createElement('div');
-    if (!el.parentNode) parent.appendChild(el);
-    if (object.content !== undefined) el.innerHTML = object.content;
-    let variations = _.values(_.pick(object, object.variations));
-
-    el.className    = classnames('object', type, variations);
-    el.style.height = object.h + '%';
-    el.style.width  = object.w + '%';
-    el.style.left   = object.l + '%';
-    el.style.top    = object.t + '%';
-    return el;
   }
 
   function reset() {

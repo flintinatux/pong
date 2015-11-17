@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const { EventEmitter } = require('events');
+const EventEmitter = require('events');
 
 const defaults = require('../data/loop');
 

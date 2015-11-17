@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const events = require('events');
+const EventEmitter = require('events');
 
 const GameObject = require('./object');
 const Loop = require('./loop');
@@ -7,11 +7,11 @@ const Loop = require('./loop');
 const objects = require('../data/objects');
 
 function Game() {
-  let el,
-      game = { render },
+  let game = { __proto__: new EventEmitter, render },
       loop = new Loop;
 
-  game.vent    = new events.EventEmitter;
+  setupDom();
+
   game.objects = objects.map(_.partial(GameObject, game));
 
   _.extend(game, _.pick(loop, 'start', 'stop'));
@@ -25,18 +25,16 @@ function Game() {
   }
 
   function render() {
-    if (!el) {
-      el = document.createElement('div');
-      el.className = 'game';
-      let grid = document.createElement('div');
-      grid.className = 'grid';
-      el.appendChild(grid);
-    }
+    game.emit('render');
+    game.emit('rendered', { time: performance.now() });
+  }
 
-    for (let object of game.objects) object.render(el);
-
-    game.vent.emit('rendered', { time: performance.now() });
-    return el;
+  function setupDom() {
+    game.el = document.createElement('div');
+    game.el.className = 'game';
+    let grid = document.createElement('div');
+    grid.className = 'grid';
+    game.el.appendChild(grid);
   }
 
   function update() {

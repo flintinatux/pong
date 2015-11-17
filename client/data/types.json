@@ -4,7 +4,8 @@
     "components": [
       "ball.countdown",
       "ball.physics",
-      "movable"
+      "movable",
+      "graphics"
     ],
     "properties": {
       "player": null
@@ -20,7 +21,8 @@
     "components": [
       "paddle.ai",
       "paddle.physics",
-      "movable"
+      "movable",
+      "graphics"
     ],
     "difficulty": 1.2,
     "maxFactor": 0.35,
@@ -30,7 +32,8 @@
   "goal": {
     "parent": "object",
     "components": [
-      "scoregiver"
+      "scoregiver",
+      "graphics"
     ],
     "properties": {
       "player": "one"
@@ -64,7 +67,8 @@
     "components": [
       "paddle.controls",
       "paddle.physics",
-      "movable"
+      "movable",
+      "graphics"
     ],
     "properties": {
       "player": "one"
@@ -89,7 +93,8 @@
   "score": {
     "parent": "object",
     "components": [
-      "scorekeeper"
+      "scorekeeper",
+      "graphics"
     ],
     "properties": {
       "player": "one"
@@ -99,12 +104,16 @@
   "stats": {
     "parent": "object",
     "components": [
-      "statistician"
+      "statistician",
+      "graphics"
     ],
     "content": "fps: 60"
   },
   "wall": {
     "parent": "object",
+    "components": [
+      "graphics"
+    ],
     "collider": true
   }
 }
