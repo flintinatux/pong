@@ -4,15 +4,16 @@ const EventEmitter = require('events');
 const GameObject = require('./object');
 const Loop = require('./loop');
 
-const objects = require('../data/objects');
+const scene = require('../data/scene');
 
 function Game() {
-  let game = { __proto__: new EventEmitter, render },
+  let game = { render },
       loop = new Loop;
 
-  setupDom();
+  Object.setPrototypeOf(game, new EventEmitter);
 
-  game.objects = objects.map(_.partial(GameObject, game));
+  setupDom();
+  game.objects = scene.map(_.partial(GameObject, game));
 
   _.extend(game, _.pick(loop, 'start', 'stop'));
 

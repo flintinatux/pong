@@ -1,14 +1,14 @@
 const _ = require('lodash');
 const EventEmitter = require('events');
 
-const defaults = require('../data/loop');
+const config = require('../data/loop');
 
-function Loop(config) {
+function Loop() {
   let id, last,
       lag  = 0.0,
-      loop = { __proto__: new EventEmitter, start, stop };
+      loop = { start, stop };
 
-  config = _.defaults({}, config, defaults);
+  Object.setPrototypeOf(loop, new EventEmitter);
 
   function start() {
     last = performance.now();

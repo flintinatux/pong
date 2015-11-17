@@ -1,15 +1,16 @@
 const _ = require('lodash');
 
-const components = require('../components');
+const Components = require('../components');
 const types = require('../lib/types');
 
 function GameObject(game, { type, state }) {
-  let proto   = types[type],
+  let components = [],
+      proto   = types[type],
       current = _.extend({}, proto.properties, state),
       next    = _.extend({}, proto.properties, state),
-      object  = { __proto__: proto, components: [], current, next };
+      object  = { current, next, reset, swap, type, update };
 
-  _.extend(object, { reset, swap, type, update });
+  Object.setPrototypeOf(object, proto);
 
   for (let property in proto.properties) {
     Object.defineProperty(object, property, { get, set });
@@ -26,7 +27,7 @@ function GameObject(game, { type, state }) {
   }
 
   for (let component of proto.components) {
-    object.components.unshift(_.get(components, component)(game, object));
+    components.unshift(_.get(Components, component)(game, object));
   }
 
   function reset() {
@@ -38,8 +39,8 @@ function GameObject(game, { type, state }) {
   }
 
   function update() {
-    let i = object.components.length;
-    while (i--) object.components[i]();
+    let i = components.length;
+    while (i--) components[i]();
   }
 
   return object;
