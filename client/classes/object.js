@@ -8,9 +8,11 @@ function GameObject(game, { type, state }) {
       proto   = types[type],
       current = _.extend({}, proto.properties, state),
       next    = _.extend({}, proto.properties, state),
-      object  = { current, next, reset, swap, type, update };
+      object  = { current, next, reset, type };
 
   Object.setPrototypeOf(object, proto);
+
+  game.on('swap', swap);
 
   for (let property in proto.properties) {
     Object.defineProperty(object, property, { get, set });
@@ -27,7 +29,7 @@ function GameObject(game, { type, state }) {
   }
 
   for (let component of proto.components) {
-    components.unshift(_.get(Components, component)(game, object));
+    _.get(Components, component)(game, object);
   }
 
   function reset() {
@@ -36,11 +38,6 @@ function GameObject(game, { type, state }) {
 
   function swap() {
     _.extend(current, next);
-  }
-
-  function update() {
-    let i = components.length;
-    while (i--) components[i]();
   }
 
   return object;

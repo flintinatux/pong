@@ -20,11 +20,6 @@ function Game() {
   loop.on('render', render);
   loop.on('update', update);
 
-  function invoke(action) {
-    let i = game.objects.length;
-    while (i--) game.objects[i][action]();
-  }
-
   function render() {
     game.emit('render');
     game.emit('rendered', { time: performance.now() });
@@ -39,8 +34,8 @@ function Game() {
   }
 
   function update() {
-    invoke('update');
-    invoke('swap');
+    game.emit('update');
+    game.emit('swap');
   }
 
   return game;

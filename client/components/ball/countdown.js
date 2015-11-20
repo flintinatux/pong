@@ -1,11 +1,13 @@
-const config = require('../../data/config');
+const loop = require('../../data/loop');
 
-const seconds = Math.floor(1000 / config.step);
+const seconds = Math.floor(1000 / loop.step);
 const max     = 5 * seconds;
 
 function BallCountdown(game, ball) {
   let count   = 0;
   let direction = Math.sign(Math.random() - 0.5);
+
+  game.on('update', update);
 
   function countdown() {
     count -= 1;
@@ -32,8 +34,6 @@ function BallCountdown(game, ball) {
       countdown();
     }
   }
-
-  return update;
 }
 
 module.exports = BallCountdown;

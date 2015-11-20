@@ -17,8 +17,6 @@ function Render(game, object) {
     el.style.left   = object.l + '%';
     el.style.top    = object.t + '%';
   }
-
-  return _.noop;
 }
 
 module.exports = Render

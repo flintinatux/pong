@@ -14,13 +14,13 @@ function keyup(event) {
 function PaddleControls(game, paddle) {
   let c = paddle.controls[paddle.player];
 
+  game.on('update', update);
+
   function update() {
     if (c.up   in keys) return paddle.ay = -paddle.amax;
     if (c.down in keys) return paddle.ay =  paddle.amax;
     paddle.ay = 0;
   }
-
-  return update;
 }
 
 module.exports = PaddleControls;

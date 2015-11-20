@@ -10,6 +10,7 @@ function Statistician(game, object) {
 
   game.on('rendered', calcFPS);
   game.on('started',  started);
+  game.on('update',   update);
 
   function calcFPS({ time }) {
     deltas[tail] = time - last;
@@ -25,8 +26,6 @@ function Statistician(game, object) {
   function update() {
     object.content = `fps: ${_.round(fps, 3)}`;
   }
-
-  return update;
 }
 
 module.exports = Statistician;

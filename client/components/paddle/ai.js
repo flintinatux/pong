@@ -7,6 +7,8 @@ function PaddleAI(game, paddle) {
   let { difficulty, maxFactor } = paddle;
   randomize();
 
+  game.on('update', update);
+
   function followBall() {
     let ball = _.find(game.objects, { type: 'ball' });
     let delta = sign * factor * paddle.h;
@@ -23,8 +25,6 @@ function PaddleAI(game, paddle) {
     collide(game, paddle, { ball: randomize });
     followBall();
   }
-
-  return update;
 }
 
 module.exports = PaddleAI;

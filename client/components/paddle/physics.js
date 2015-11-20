@@ -4,6 +4,8 @@ const move    = require('../../lib/move');
 function PaddlePhysics(game, paddle) {
   let { current, next } = paddle;
 
+  game.on('update', update);
+
   function update() {
     move(paddle);
     collide(game, next, { wall });
@@ -15,8 +17,6 @@ function PaddlePhysics(game, paddle) {
         (side === 'bottom' && next.vy > 0))
       next.ay = current.vy = 0;
   }
-
-  return update;
 }
 
 module.exports = PaddlePhysics;

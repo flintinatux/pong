@@ -3,6 +3,7 @@ const collide = require('../../lib/collide');
 const maxTheta = 0.25 * Math.PI;
 
 function BallPhysics(game, ball) {
+  game.on('update', update);
 
   function horizontal(side) {
     return ['left', 'right'].indexOf(side) > -1;
@@ -35,8 +36,6 @@ function BallPhysics(game, ball) {
     if (horizontal(side)) return ball.vx *= -1;
     if (vertical(side))   return ball.vy *= -1;
   }
-
-  return update;
 }
 
 module.exports = BallPhysics;
