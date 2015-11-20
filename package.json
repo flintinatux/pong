@@ -14,7 +14,7 @@
     "prebuild": "npm run clean && mkdir -p dist",
     "prewatch": "npm run clean && mkdir -p dist",
     "prewatch:styles": "npm run build:styles",
-    "serve": "browser-sync start --port 3000 --server dist --files dist/ --no-open --no-notify",
+    "serve": "browser-sync start --port 3000 --server dist --files dist/ --no-open --no-notify --reload-delay 500 --reload-delay 500",
     "watch": "parallelshell 'npm run watch:markup' 'npm run watch:scripts' 'npm run watch:styles'",
     "watch:markup": "jade client/ -w -o dist",
     "watch:scripts": "watchify client/app.js -d -v -o dist/pong.js",
