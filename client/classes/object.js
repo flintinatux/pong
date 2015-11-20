@@ -19,7 +19,7 @@ function GameObject(game, { type, state }) {
   }
 
   for (let property in proto.computed) {
-    let expression = _.template(proto.computed[property]);
+    let expression = _.template('${' + proto.computed[property] + '}');
     let descriptor = { get() { return expression(this) } };
     Object.defineProperty(object,  property, descriptor);
     Object.defineProperty(current, property, descriptor);

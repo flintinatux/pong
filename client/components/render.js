@@ -1,7 +1,7 @@
 const _ = require('lodash');
 const classnames = require('classnames');
 
-function Graphics(game, object) {
+function Render(game, object) {
   let el = document.createElement('div');
   game.el.appendChild(el);
 
@@ -21,4 +21,4 @@ function Graphics(game, object) {
   return _.noop;
 }
 
-module.exports = Graphics
+module.exports = Render
