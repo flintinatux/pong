@@ -13,7 +13,7 @@ function Game() {
   Object.setPrototypeOf(game, new EventEmitter);
 
   setupDom();
-  game.objects = scene.map(_.partial(GameObject, game));
+  game.objects = scene.objects.map(_.partial(GameObject, game));
 
   _.extend(game, _.pick(loop, 'start', 'stop'));
 
