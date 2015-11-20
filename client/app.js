@@ -2,7 +2,6 @@ const Game = require('./classes/game');
 
 let game = window.game = new Game();
 
-game.render();
 document.body.appendChild(game.el);
 
 let running;

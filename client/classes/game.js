@@ -2,28 +2,19 @@ const _ = require('lodash');
 const EventEmitter = require('jvent');
 
 const GameObject = require('./object');
-const Loop = require('./loop');
 
+const loop  = require('../data/loop');
 const scene = require('../data/scene');
 
 function Game() {
-  let game = { render },
-      loop = new Loop;
+  let id, last,
+      lag  = 0.0,
+      game = { start, stop };
 
   Object.setPrototypeOf(game, new EventEmitter);
 
   setupDom();
   game.objects = scene.objects.map(_.partial(GameObject, game));
-
-  _.extend(game, _.pick(loop, 'start', 'stop'));
-
-  loop.on('render', render);
-  loop.on('update', update);
-
-  function render() {
-    game.emit('render');
-    game.emit('rendered', { time: performance.now() });
-  }
 
   function setupDom() {
     game.el = document.createElement('div');
@@ -33,11 +24,35 @@ function Game() {
     game.el.appendChild(grid);
   }
 
-  function update() {
-    game.emit('update');
-    game.emit('swap');
+  function start() {
+    last = performance.now();
+    id = requestAnimationFrame(tick);
+    game.emit('started', { time: last });
   }
 
+  function stop() {
+    cancelAnimationFrame(id);
+    game.emit('stopped', { time: performance.now() });
+  }
+
+  function tick(next) {
+    lag += next - last;
+    last = next;
+
+    if (lag > loop.maxLag) lag = loop.maxLag;
+
+    while (lag > loop.step) {
+      game.emit('update');
+      game.emit('swap');
+      lag -= loop.step;
+    }
+
+    game.emit('render');
+    game.emit('post render');
+    id = requestAnimationFrame(tick);
+  }
+
+  game.emit('render');
   return game;
 }
 
