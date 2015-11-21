@@ -2,6 +2,7 @@ const _ = require('lodash');
 const EventEmitter = require('jvent');
 
 const GameObject = require('./object');
+const World      = require('./world');
 
 const loop  = require('../data/loop');
 const scene = require('../data/scene');
@@ -9,19 +10,16 @@ const scene = require('../data/scene');
 function Game() {
   let id, last,
       lag  = 0.0,
-      game = { start, stop };
+      game = { render, start, stop };
 
   Object.setPrototypeOf(game, new EventEmitter);
 
-  setupDom();
+  game.world   = new World(game);
   game.objects = scene.objects.map(_.partial(GameObject, game));
 
-  function setupDom() {
-    game.el = document.createElement('div');
-    game.el.className = 'game';
-    let grid = document.createElement('div');
-    grid.className = 'grid';
-    game.el.appendChild(grid);
+  function render() {
+    game.emit('render');
+    game.emit('post-render');
   }
 
   function start() {
@@ -42,17 +40,19 @@ function Game() {
     if (lag > loop.maxLag) lag = loop.maxLag;
 
     while (lag > loop.step) {
-      game.emit('update');
-      game.emit('swap');
+      update();
       lag -= loop.step;
     }
 
-    game.emit('render');
-    game.emit('post render');
+    render();
     id = requestAnimationFrame(tick);
   }
 
-  game.emit('render');
+  function update() {
+    game.emit('update');
+    game.emit('swap');
+  }
+
   return game;
 }
 

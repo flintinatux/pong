@@ -55,6 +55,7 @@
     "normalize.css": "^3.0.3",
     "parallelshell": "^2.0.0",
     "postcss-cli": "^2.2.0",
+    "three": "^0.73.0",
     "uglify-js": "^2.5.0",
     "watchify": "^3.4.0"
   }

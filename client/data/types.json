@@ -2,13 +2,20 @@
   "ball": {
     "parent": "object",
     "components": [
-      "ball.countdown",
-      "ball.physics",
-      "movable",
-      "render"
+      // "ball.countdown",
+      // "ball.physics",
+      // "movable",
+      "ball.render"
     ],
     "properties": {
-      "player": null
+      "player": null,
+      "radius": 0
+    },
+    "computed": {
+      "l": "x - radius",
+      "r": "x + radius",
+      "t": "y + radius",
+      "b": "y - radius"
     },
     "variations": [
       "player"
@@ -55,8 +62,8 @@
     "computed": {
       "l": "x - w/2",
       "r": "x + w/2",
-      "t": "y - h/2",
-      "b": "y + h/2"
+      "t": "y + h/2",
+      "b": "y - h/2"
     },
     "variations": [],
     "amax": 0,
