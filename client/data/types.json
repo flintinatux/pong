@@ -2,9 +2,9 @@
   "ball": {
     "parent": "object",
     "components": [
-      // "ball.countdown",
-      // "ball.physics",
-      // "movable",
+      "ball.countdown",
+      "ball.physics",
+      "movable",
       "ball.render"
     ],
     "properties": {
@@ -21,6 +21,10 @@
       "player"
     ],
     "collider": true,
+    "color": {
+      "one": "0xA32100",  // red
+      "two": "0x01008C"   // blue
+    },
     "vmax": 0.8
   },
   "computer": {
@@ -66,6 +70,7 @@
       "b": "y - h/2"
     },
     "variations": [],
+    "color": "0x000000",
     "amax": 0,
     "vmax": 0
   },
