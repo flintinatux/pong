@@ -8,13 +8,13 @@
   "scripts": {
     "build": "npm run build:markup && npm run build:scripts && npm run build:styles",
     "build:markup": "jade client/ -o dist",
-    "build:scripts": "browserify client/app.js | uglifyjs --screw-ie8 > dist/pong.js",
+    "build:scripts": "browserify client/app.js > dist/pong.js",
     "build:styles": "lessc --glob client/app.less | postcss -u autoprefixer | cleancss --s0 > dist/pong.css",
     "clean": "rm -rf dist/*",
     "prebuild": "npm run clean && mkdir -p dist",
     "prewatch": "npm run clean && mkdir -p dist",
     "prewatch:styles": "npm run build:styles",
-    "serve": "browser-sync start --port 3000 --server dist --files dist/ --no-open --no-notify --reload-delay 500 --reload-delay 500",
+    "serve": "browser-sync start --port 5000 --server dist --files dist/ --no-open --no-notify --reload-delay 500 --reload-delay 500",
     "watch": "parallelshell 'npm run watch:markup' 'npm run watch:scripts' 'npm run watch:styles'",
     "watch:markup": "jade client/ -w -o dist",
     "watch:scripts": "watchify client/app.js -d -v -o dist/pong.js",
@@ -22,25 +22,11 @@
   },
   "browserify": {
     "transform": [
-      [
-        "babelify",
-        {
-          "plugins": [
-            "transform-runtime"
-          ],
-          "presets": [
-            "es2015"
-          ]
-        }
-      ],
       "bulkify"
     ]
   },
   "devDependencies": {
     "autoprefixer": "^6.0.3",
-    "babel-plugin-transform-runtime": "^6.1.18",
-    "babel-preset-es2015": "^6.1.18",
-    "babelify": "^7.2.0",
     "browser-sync": "^2.9.11",
     "browserify": "^11.2.0",
     "bulkify": "^1.1.1",
@@ -55,7 +41,7 @@
     "normalize.css": "^3.0.3",
     "parallelshell": "^2.0.0",
     "postcss-cli": "^2.2.0",
-    "uglify-js": "^2.5.0",
+    "uglify-js": "github:mishoo/UglifyJS2#harmony",
     "watchify": "^3.4.0"
   }
 }

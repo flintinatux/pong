@@ -1,4 +1,4 @@
-import _ from 'lodash'
+const _ = require('lodash');
 
 function collide(game, A, handlers) {
   game.objects.forEach(checkCollision);
