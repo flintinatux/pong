@@ -8,16 +8,18 @@
   "scripts": {
     "build": "npm run build:markup && npm run build:scripts && npm run build:styles",
     "build:markup": "jade client/ -o dist",
-    "build:scripts": "browserify client/app.js > dist/pong.js",
-    "build:styles": "lessc --glob client/app.less | postcss -u autoprefixer | cleancss --s0 > dist/pong.css",
+    "build:scripts": "browserify client/app.js > dist/app.js",
+    "build:styles": "lessc --glob client/app.less | postcss -u autoprefixer | cleancss --s0 > dist/app.css",
     "clean": "rm -rf dist/*",
+    "postbuild": "ccjs dist/app.js --warning_level=QUIET > dist/app-min.js",
     "prebuild": "npm run clean && mkdir -p dist",
     "prewatch": "npm run clean && mkdir -p dist",
     "prewatch:styles": "npm run build:styles",
     "serve": "browser-sync start --port 5000 --server dist --files dist/ --no-open --no-notify --reload-delay 500 --reload-delay 500",
+    "test": "echo \"No tests yet\" && exit 0",
     "watch": "parallelshell 'npm run watch:markup' 'npm run watch:scripts' 'npm run watch:styles'",
     "watch:markup": "jade client/ -w -o dist",
-    "watch:scripts": "watchify client/app.js -d -v -o dist/pong.js",
+    "watch:scripts": "watchify client/app.js -d -v -o dist/app.js",
     "watch:styles": "eye --*glob=client/**/*.less npm run build:styles"
   },
   "browserify": {
@@ -25,23 +27,26 @@
       "bulkify"
     ]
   },
+  "dependencies": {
+    "classnames": "^2.2.3",
+    "jvent": "^0.2.0",
+    "keycode": "^2.1.1",
+    "lodash": "^4.7.0",
+    "normalize.css": "^4.0.0"
+  },
   "devDependencies": {
-    "autoprefixer": "^6.0.3",
-    "browser-sync": "^2.9.11",
-    "browserify": "^11.2.0",
-    "bulkify": "^1.1.1",
-    "classnames": "^2.2.0",
-    "clean-css": "^3.4.6",
+    "autoprefixer": "^6.3.5",
+    "browser-sync": "^2.11.2",
+    "browserify": "^13.0.0",
+    "bulkify": "^1.2.0",
+    "clean-css": "^3.4.10",
+    "closurecompiler": "^1.5.2",
     "eye": "0.0.3",
     "jade": "^1.11.0",
-    "jvent": "^0.2.0",
-    "less": "^2.5.3",
-    "less-plugin-glob": "^1.1.0",
-    "lodash": "^3.10.1",
-    "normalize.css": "^3.0.3",
+    "less": "^2.6.1",
+    "less-plugin-glob": "^1.1.1",
     "parallelshell": "^2.0.0",
-    "postcss-cli": "^2.2.0",
-    "uglify-js": "github:mishoo/UglifyJS2#harmony",
-    "watchify": "^3.4.0"
+    "postcss-cli": "^2.5.1",
+    "watchify": "^3.7.0"
   }
 }

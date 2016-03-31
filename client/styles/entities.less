@@ -1,0 +1,31 @@
+.one() {
+  background: @bg-blue;
+  border: 0.1rem solid @border-blue;
+}
+
+.two() {
+  background: @bg-red;
+  border: 0.1rem solid @border-red;
+}
+
+.Ball {
+  background: @gray-10;
+  border-radius: 50%;
+}
+
+.Paddle {
+  background: @gray-20;
+  border-radius: 0.4rem;
+}
+
+.PlayerOne {
+  .one();
+}
+
+.PlayerTwo {
+  .two();
+}
+
+.Wall {
+  background: @gray-90;
+}
