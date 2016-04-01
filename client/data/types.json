@@ -19,12 +19,12 @@
   "Computer": {
     "parent": "Paddle",
     "components": {
-      // "AI": {
-      //   "difficulty": 1.2,
-      //   "maxFactor": 0.35,
-      //   "vin": 0.4,
-      //   "vout": 0.1
-      // }
+      "AI": {
+        "difficulty": 1.2,
+        "maxFactor": 0.35,
+        "vin": 0.4,
+        "vout": 0.1
+      }
     }
   },
   "GoalOne": {
@@ -47,7 +47,6 @@
       "Render": {}
     },
     "defaults": {
-      "player": "one",
       "amax": 0.075,
       "vmax": 0.4
     }

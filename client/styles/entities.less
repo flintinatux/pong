@@ -16,14 +16,18 @@
 .Paddle {
   background: @gray-20;
   border-radius: 0.4rem;
-}
 
-.PlayerOne {
-  .one();
-}
+  &.Computer {
+    .two();
+  }
 
-.PlayerTwo {
-  .two();
+  &.PlayerOne {
+    .one();
+  }
+
+  &.PlayerTwo {
+    .two();
+  }
 }
 
 .Wall {
