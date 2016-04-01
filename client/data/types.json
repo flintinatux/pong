@@ -1,12 +1,16 @@
 {
   "Ball": {
     "components": {
+      "Bounce": {
+        "maxTheta": 0.25
+      },
       "Motion": {},
       "Render": {}
     },
     "defaults": {
       "player": null,
-      "vmax": 0.8
+      "vx":     0.8,
+      "vmax":   0.8
     },
     "variations": [
       "player"
@@ -25,16 +29,16 @@
   },
   "GoalOne": {
     "components": {
-      // "Scoregiver": {
-      //   "player": "one"
-      // }
+      "Scoregiver": {
+        "player": "one"
+      }
     }
   },
   "GoalTwo": {
     "components": {
-      // "Scoregiver": {
-      //   "player": "two"
-      // }
+      "Scoregiver": {
+        "player": "two"
+      }
     }
   },
   "Paddle": {

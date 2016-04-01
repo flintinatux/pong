@@ -1,17 +1,12 @@
-const _ = require('lodash');
+const Manic = require('manic');
 
-const collide = require('../lib/collide');
-
-function Scoregiver(game, object) {
-  game.on('update', update);
-
-  function ball(side, ball) {
-    game.emit('score goal', _.pick(object, 'player'));
-    ball.reset();
+function Scoregiver(goal, { player }) {
+  function collided(other, side) {
+    if (other.isA('Ball')) other.reset();
   }
 
-  function update() {
-    collide(game, object, { ball });
+  return function update({ entities }) {
+    Manic.collide(goal, entities, collided);
   }
 }
 

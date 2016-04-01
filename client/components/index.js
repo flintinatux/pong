@@ -1,3 +1,5 @@
 module.exports = {
-  Controls: require('./controls')
+  Bounce:     require('./bounce'),
+  Controls:   require('./controls'),
+  Scoregiver: require('./scoregiver')
 };
