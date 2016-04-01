@@ -27,7 +27,7 @@
     }
   },
   {
-    "type": "Computer",
+    "type": "PlayerOne",
     "state": {
       "h": 10,
       "w": 1.25,
@@ -36,7 +36,7 @@
     }
   },
   {
-    "type": "Computer",
+    "type": "PlayerTwo",
     "state": {
       "h": 10,
       "w": 1.25,
@@ -59,7 +59,7 @@
       "h": 2,
       "w": 106,
       "x": 50,
-      "y": 61
+      "y": 53
     }
   }
 ]

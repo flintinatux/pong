@@ -2,7 +2,7 @@
   "Ball": {
     "components": {
       "Bounce": {
-        "maxTheta": 0.25
+        "maxTheta": 0.35
       },
       "Motion": {},
       "Render": {}
@@ -43,6 +43,9 @@
   },
   "Paddle": {
     "components": {
+      "Blockable": {
+        "by": "Wall"
+      },
       "Motion": {},
       "Render": {}
     },
