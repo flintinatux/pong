@@ -1,1 +1,3 @@
-module.exports = require('bulk-require')(__dirname, ['**/*.js']);
+module.exports = {
+  Controls: require('./controls')
+};

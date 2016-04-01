@@ -23,38 +23,20 @@
       // }
     }
   },
-  // "Goal": {
-  //   "components": [
-  //     "scoregiver",
-  //     "render"
-  //   ],
-  //   "defaults": {
-  //     "player": "one"
-  //   },
-  //   "collider": true
-  // },
-  // "object": {
-  //   "components": [],
-  //   "defaults": {
-  //     "h": 0,
-  //     "w": 0,
-  //     "x": 0,
-  //     "y": 0,
-  //     "vx": 0,
-  //     "vy": 0,
-  //     "ax": 0,
-  //     "ay": 0
-  //   },
-  //   "computed": {
-  //     "l": "x - w/2",
-  //     "r": "x + w/2",
-  //     "t": "y - h/2",
-  //     "b": "y + h/2"
-  //   },
-  //   "variations": [],
-  //   "amax": 0,
-  //   "vmax": 0
-  // },
+  "GoalOne": {
+    "components": {
+      // "Scoregiver": {
+      //   "player": "one"
+      // }
+    }
+  },
+  "GoalTwo": {
+    "components": {
+      // "Scoregiver": {
+      //   "player": "two"
+      // }
+    }
+  },
   "Paddle": {
     "components": {
       "Motion": {},
@@ -69,10 +51,10 @@
   "PlayerOne": {
     "parent": "Paddle",
     "components": {
-      // "Controls": {
-      //   "up":   "w",
-      //   "down": "s"
-      // }
+      "Controls": {
+        "up":   "w",
+        "down": "s"
+      }
     },
     "defaults": {
       "player": "one"
@@ -81,32 +63,15 @@
   "PlayerTwo": {
     "parent": "Paddle",
     "components": {
-      // "Controls": {
-      //   "up":   "up",
-      //   "down": "down"
-      // }
+      "Controls": {
+        "up":   "up",
+        "down": "down"
+      }
     },
     "defaults": {
       "player": "two"
     }
   },
-  // "Score": {
-  //   "components": [
-  //     "scorekeeper",
-  //     "render"
-  //   ],
-  //   "defaults": {
-  //     "player": "one"
-  //   },
-  //   "content": 0
-  // },
-  // "Stats": {
-  //   "components": [
-  //     "statistician",
-  //     "render"
-  //   ],
-  //   "content": "fps: 60"
-  // },
   "Wall": {
     "components": {
       "Render": {}

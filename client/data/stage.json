@@ -9,6 +9,24 @@
     }
   },
   {
+    "type": "GoalOne",
+    "state": {
+      "h": 60,
+      "w": 0,
+      "x": 103,
+      "y": 30
+    }
+  },
+  {
+    "type": "GoalTwo",
+    "state": {
+      "h": 60,
+      "w": 0,
+      "x": -3,
+      "y": 30
+    }
+  },
+  {
     "type": "PlayerOne",
     "state": {
       "h": 10,

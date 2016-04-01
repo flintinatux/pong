@@ -1,10 +1,12 @@
 const Manic = require('manic');
 
+const comps = require('./components');
 const stage = require('./data/stage.json');
 const types = require('./data/types.json');
 
 var manic = Manic(document.getElementById('game'), 0.6);
 
+for (var name in comps) manic.component(name, comps[name]);
 manic.types(types);
 manic.stage(stage);
 
