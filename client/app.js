@@ -13,7 +13,7 @@ manic.templates(templates);
 systems.forEach(manic.system);
 manic.stage(stage);
 
-var running;
+var running = true;
 
 window.addEventListener('keydown', function(e) {
   if (keycode(e) !== 'space') return;
