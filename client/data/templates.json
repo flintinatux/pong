@@ -4,10 +4,12 @@
       "maxTheta": 0.4
     },
     "Collision": {
-      "h": 2,
-      "w": 2
+      "h": 2.6,
+      "w": 2.6
     },
-    "Motion": {},
+    "Motion": {
+      "vmax": 0.8
+    },
     "Position": {},
     "Render": {
       "className": "ball",
@@ -31,6 +33,7 @@
       "amax": 0.075,
       "vmax": 0.4
     },
+    "Paddle": {},
     "Player": {},
     "Position": {},
     "Render": {

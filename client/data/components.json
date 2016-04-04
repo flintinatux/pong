@@ -5,6 +5,7 @@
     "vin": 0.4,
     "vout": 0.1
   },
+  "Ball": {},
   "Blockable": {},
   "Bounce": {
     "maxTheta": 0.4
@@ -13,6 +14,7 @@
     "up":   "up",
     "down": "down"
   },
+  "Paddle": {},
   "Player": {
     "name": "one"
   }
