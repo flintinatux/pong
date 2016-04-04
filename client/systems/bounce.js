@@ -12,6 +12,9 @@ module.exports = {
 
       if (!comps('Paddle', other)) continue;
 
+      if (side === 'left'   && m.vx > 0) continue;
+      if (side === 'right'  && m.vx < 0) continue;
+
       var c2 = comps('Collision', other),
           p2 = comps('Position',  other),
           dy = p1.y - p2.y,
