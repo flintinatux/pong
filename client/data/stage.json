@@ -60,12 +60,9 @@
     }
   },
   {
-    "type": "Paddle",
+    "type": "Computer",
     "state": {
-      "Controls": {
-        "up": "up",
-        "down": "down"
-      },
+      "AI": {},
       "Player": {
         "name": "two"
       },

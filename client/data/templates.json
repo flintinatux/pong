@@ -1,7 +1,8 @@
 {
   "Ball": {
+    "Ball": {},
     "Bounce": {
-      "maxTheta": 0.4
+      "maxTheta": 0.45
     },
     "Collision": {
       "h": 2.6,
@@ -10,11 +11,37 @@
     "Motion": {
       "vmax": 0.8
     },
+    "Player": {},
     "Position": {},
     "Render": {
       "className": "ball",
       "h": 2,
       "w": 2
+    }
+  },
+  "Computer": {
+    "AI": {
+      "difficulty": 1.2,
+      "maxFactor": 0.35,
+      "vin": 0.4,
+      "vout": 0.1
+    },
+    "Blockable": {},
+    "Collision": {
+      "h": 10.8,
+      "w": 1.25
+    },
+    "Motion": {
+      "amax": 0.075,
+      "vmax": 0.4
+    },
+    "Paddle": {},
+    "Player": {},
+    "Position": {},
+    "Render": {
+      "className": "paddle",
+      "h": 10,
+      "w": 1.25
     }
   },
   "Goal": {
