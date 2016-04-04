@@ -1,0 +1,19 @@
+{
+  "AI": {
+    "difficulty": 1.2,
+    "maxFactor": 0.35,
+    "vin": 0.4,
+    "vout": 0.1
+  },
+  "Blockable": {},
+  "Bounce": {
+    "maxTheta": 0.4
+  },
+  "Controls": {
+    "up":   "up",
+    "down": "down"
+  },
+  "Player": {
+    "name": "one"
+  }
+}

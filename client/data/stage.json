@@ -2,64 +2,108 @@
   {
     "type": "Ball",
     "state": {
-      "h": 2,
-      "w": 2,
-      "x": 50,
-      "y": 26
+      "Position": {
+        "x": 50,
+        "y": 26
+      }
     }
   },
   {
-    "type": "GoalOne",
+    "type": "Goal",
     "state": {
-      "h": 52,
-      "w": 2,
-      "x": 103,
-      "y": 26
+      "Collision": {
+        "h": 52,
+        "w": 2
+      },
+      "Player": {
+        "name": "one"
+      },
+      "Position": {
+        "x": 103,
+        "y": 26
+      }
     }
   },
   {
-    "type": "GoalTwo",
+    "type": "Goal",
     "state": {
-      "h": 52,
-      "w": 2,
-      "x": -3,
-      "y": 26
+      "Collision": {
+        "h": 52,
+        "w": 2
+      },
+      "Player": {
+        "name": "two"
+      },
+      "Position": {
+        "x": -3,
+        "y": 26
+      }
     }
   },
   {
-    "type": "PlayerOne",
+    "type": "Paddle",
     "state": {
-      "h": 10,
-      "w": 1.25,
-      "x": 3,
-      "y": 26,
+      "Controls": {
+        "up": "w",
+        "down": "s"
+      },
+      "Player": {
+        "name": "one"
+      },
+      "Position": {
+        "x": 3,
+        "y": 26
+      }
     }
   },
   {
-    "type": "PlayerTwo",
+    "type": "Paddle",
     "state": {
-      "h": 10,
-      "w": 1.25,
-      "x": 97,
-      "y": 26,
+      "Controls": {
+        "up": "up",
+        "down": "down"
+      },
+      "Player": {
+        "name": "two"
+      },
+      "Position": {
+        "x": 97,
+        "y": 26
+      }
     }
   },
   {
     "type": "Wall",
     "state": {
-      "h": 2,
-      "w": 106,
-      "x": 50,
-      "y": -1
+      "Collision": {
+        "h": 2,
+        "w": 106
+      },
+      "Position": {
+        "x": 50,
+        "y": -1
+      },
+      "Render": {
+        "h": 2,
+        "w": 106
+      }
     }
   },
   {
     "type": "Wall",
     "state": {
-      "h": 2,
-      "w": 106,
-      "x": 50,
-      "y": 53
+      "Collision": {
+        "h": 2,
+        "w": 106
+      },
+      "Position": {
+        "x": 50,
+        "y": 53
+      },
+      "Render": {
+        "h": 2,
+        "w": 106
+      }
     }
   }
 ]
