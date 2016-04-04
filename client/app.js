@@ -1,18 +1,27 @@
-const Game = require('./classes/game');
+const keycode = require('keycode');
+const Manic   = require('manic');
 
-let game = window.game = new Game();
+const components = require('./data/components.json');
+const stage      = require('./data/stage.json');
+const systems    = require('./systems');
+const templates  = require('./data/templates.json');
 
-document.body.appendChild(game.el);
+var manic = Manic(document.getElementById('game'), 0.52);
 
-let running;
+manic.components(components);
+manic.templates(templates);
+systems.forEach(manic.system);
+manic.stage(stage);
+
+var running = true;
 
 window.addEventListener('keydown', function(e) {
-  if (e.keyCode !== 32) return;
+  if (keycode(e) !== 'space') return;
   if (running) {
     running = false;
-    game.stop();
+    manic.stop();
   } else {
     running = true;
-    game.start();
+    manic.start();
   }
 });

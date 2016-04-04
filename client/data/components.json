@@ -1,0 +1,24 @@
+{
+  "AI": {
+    "difficulty": 1.2,
+    "factor": 0.35,
+    "maxFactor": 0.35,
+    "sign": 1,
+    "vin": 0.4,
+    "vout": 0.1
+  },
+  "Ball": {},
+  "Blockable": {},
+  "Bounce": {
+    "maxTheta": 0.4
+  },
+  "Controls": {
+    "up":   "up",
+    "down": "down"
+  },
+  "Paddle": {},
+  "Player": {
+    "name": "none",
+    "prev": null
+  }
+}

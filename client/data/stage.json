@@ -1,0 +1,109 @@
+[
+  {
+    "type": "Ball",
+    "state": {
+      "Motion": {
+        "vx": 0.6
+      },
+      "Position": {
+        "x": 50,
+        "y": 26
+      }
+    }
+  },
+  {
+    "type": "Goal",
+    "state": {
+      "Collision": {
+        "h": 52,
+        "w": 2
+      },
+      "Player": {
+        "name": "one"
+      },
+      "Position": {
+        "x": 103,
+        "y": 26
+      }
+    }
+  },
+  {
+    "type": "Goal",
+    "state": {
+      "Collision": {
+        "h": 52,
+        "w": 2
+      },
+      "Player": {
+        "name": "two"
+      },
+      "Position": {
+        "x": -3,
+        "y": 26
+      }
+    }
+  },
+  {
+    "type": "Paddle",
+    "state": {
+      "Controls": {
+        "up": "w",
+        "down": "s"
+      },
+      "Player": {
+        "name": "one"
+      },
+      "Position": {
+        "x": 3,
+        "y": 26
+      }
+    }
+  },
+  {
+    "type": "Computer",
+    "state": {
+      "AI": {},
+      "Player": {
+        "name": "two"
+      },
+      "Position": {
+        "x": 97,
+        "y": 26
+      }
+    }
+  },
+  {
+    "type": "Wall",
+    "state": {
+      "Collision": {
+        "h": 2,
+        "w": 106
+      },
+      "Position": {
+        "x": 50,
+        "y": -1
+      },
+      "Render": {
+        "h": 2,
+        "w": 106
+      }
+    }
+  },
+  {
+    "type": "Wall",
+    "state": {
+      "Collision": {
+        "h": 2,
+        "w": 106
+      },
+      "Position": {
+        "x": 50,
+        "y": 53
+      },
+      "Render": {
+        "h": 2,
+        "w": 106
+      }
+    }
+  }
+]
