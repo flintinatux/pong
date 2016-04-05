@@ -1,35 +1,28 @@
-.one() {
-  background: @bg-blue;
-  border: 0.1rem solid @border-blue;
+.ownable() {
+  &.one {
+    background: @bg-blue;
+    border: 0.1rem solid @border-blue;
+  }
+
+  &.two {
+    background: @bg-red;
+    border: 0.1rem solid @border-red;
+  }
 }
 
-.two() {
-  background: @bg-red;
-  border: 0.1rem solid @border-red;
-}
-
-.Ball {
+.ball {
+  .ownable();
   background: @gray-10;
   border-radius: 50%;
 }
 
-.Paddle {
+.paddle, .computer {
+  .ownable();
   background: @gray-20;
   border-radius: 0.4rem;
-
-  &.Computer {
-    .two();
-  }
-
-  &.PlayerOne {
-    .one();
-  }
-
-  &.PlayerTwo {
-    .two();
-  }
 }
 
-.Wall {
+.wall {
   background: @gray-90;
+  z-index: -1000;
 }
