@@ -1,6 +1,6 @@
 {
   "AI": {
-    "difficulty": 1.2,
+    "difficulty": 0.8,
     "factor": 0.35,
     "maxFactor": 0.35,
     "sign": 1,

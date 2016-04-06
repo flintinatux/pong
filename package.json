@@ -32,6 +32,7 @@
     "jvent": "^0.2.0",
     "keycode": "^2.1.1",
     "lodash": "^4.7.0",
+    "mithril": "^0.2.3",
     "normalize.css": "^4.0.0"
   },
   "devDependencies": {

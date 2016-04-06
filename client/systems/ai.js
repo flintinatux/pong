@@ -5,7 +5,6 @@ module.exports = {
 
   update(id, [a, c, m, play1, pos1], { comps }) {
     var ball = Object.keys(comps('Ball'))[0];
-    if (!ball) return console.log('no ball');
 
     var play2 = comps('Player',   ball),
         pos2  = comps('Position', ball),
