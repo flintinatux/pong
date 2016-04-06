@@ -16,6 +16,7 @@
     "up":   "up",
     "down": "down"
   },
+  "Goal": {},
   "Paddle": {},
   "Player": {
     "name": "none",

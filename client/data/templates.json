@@ -46,8 +46,12 @@
   },
   "Goal": {
     "Collision": {},
+    "Goal": {},
     "Player": {},
-    "Position": {}
+    "Position": {},
+    "Render": {
+      "className": "wall"
+    }
   },
   "Paddle": {
     "Blockable": {},

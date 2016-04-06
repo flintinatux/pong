@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.3",
-    "jvent": "^0.2.0",
+    "eventemitter3": "^1.2.0",
     "keycode": "^2.1.1",
     "lodash": "^4.7.0",
     "mithril": "^0.2.3",
