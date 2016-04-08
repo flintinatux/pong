@@ -1,5 +1,18 @@
 [
   {
+    "type": "Computer",
+    "state": {
+      "AI": {},
+      "Player": {
+        "name": "two"
+      },
+      "Position": {
+        "x": 97,
+        "y": 26
+      }
+    }
+  },
+  {
     "type": "Countdown",
     "state": {}
   },
@@ -52,17 +65,7 @@
     }
   },
   {
-    "type": "Computer",
-    "state": {
-      "AI": {},
-      "Player": {
-        "name": "two"
-      },
-      "Position": {
-        "x": 97,
-        "y": 26
-      }
-    }
+    "type": "Spawner"
   },
   {
     "type": "Wall",

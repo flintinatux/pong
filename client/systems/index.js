@@ -1,12 +1,1 @@
-module.exports = [
-  require('./ai'),
-  require('./adjust-ai'),
-  require('./blockable'),
-  require('./bounce'),
-  require('./controls'),
-  require('./countdown'),
-  require('./render-player'),
-  require('./render-text'),
-  require('./scoring'),
-  require('./timer')
-];
+module.exports = require('bulk-require')(__dirname, ['**/!(index).js']);

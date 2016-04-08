@@ -20,15 +20,31 @@
     "count": 0
   },
   "Goal": {},
+  "Lifespan": {
+    "life": 0
+  },
   "Paddle": {},
   "Player": {
     "name": "none",
     "prev": null
+  },
+  "Powerup": {},
+  "Spawner": {
+    "area": {
+      "xmin": 10,
+      "xmax": 90,
+      "ymin": 10,
+      "ymax": 42
+    },
+    "rate": 0,
+    "time": 0,
+    "types": []
   },
   "Text": {
     "content": ""
   },
   "Timer": {
     "time": 0
-  }
+  },
+  "Wall": {}
 }

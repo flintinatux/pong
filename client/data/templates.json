@@ -66,6 +66,24 @@
     "Player": {},
     "Position": {}
   },
+  "Grow": {
+    "Collision": {
+      "h": 3,
+      "w": 3
+    },
+    "Lifespan": {
+      "life": 10000
+    },
+    "Position": {},
+    "Powerup": {
+      "type": "Grow"
+    },
+    "Render": {
+      "className": "grow",
+      "h": 3,
+      "w": 3
+    }
+  },
   "Paddle": {
     "Blockable": {},
     "Collision": {
@@ -86,11 +104,21 @@
       "w": 1.25
     }
   },
+  "Spawner": {
+    "Spawner": {
+      "rate": 15000,
+      "time": 15000,
+      "types": [
+        "Grow"
+      ]
+    }
+  },
   "Wall": {
     "Collision": {},
     "Position": {},
     "Render": {
       "className": "wall"
-    }
+    },
+    "Wall": {}
   }
 }

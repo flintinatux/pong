@@ -7,8 +7,11 @@ module.exports = {
     for (var other in contacts) {
       var side = contacts[other];
 
-      if (side === 'top'    && m.vy < 0) return m.vy *= -1;
-      if (side === 'bottom' && m.vy > 0) return m.vy *= -1;
+      if (comps('Wall', other)) {
+        if (side === 'top'    && m.vy < 0) return m.vy *= -1;
+        if (side === 'bottom' && m.vy > 0) return m.vy *= -1;
+        continue;
+      }
 
       if (!comps('Paddle', other)) continue;
 

@@ -18,7 +18,7 @@ function config(elem, isInit, ctx) {
 
   manic.comps.define(components);
   manic.entities.define(templates);
-  systems.forEach(manic.systems.define);
+  for (var name in systems) manic.systems.define(systems[name]);
   manic.scene(scenes.demo);
   manic.loop.start();
 
