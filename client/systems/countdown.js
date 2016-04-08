@@ -3,15 +3,19 @@ const Ball = require('../lib/ball');
 module.exports = {
   name:  'Countdown',
   phase: 'render',
-  deps:  ['Countdown', 'Text'],
+  deps:  ['Countdown', 'Timer', 'Text'],
 
-  update(id, [c, t], { comps, entities, loop }) {
-    c.count -= loop.step;
-    if (c.count <= 0) {
+  update(id, [c, timer, text], { comps, entities }) {
+    if (timer.time <= 0) {
+      c.count--;
+      timer.time = 1000;
+    }
+
+    if (c.count > 0) {
+      text.content = c.count;
+    } else {
       comps.add('Death', id);
       setTimeout(function() { entities.create(Ball()) }, 250);
-    } else {
-      t.content = Math.ceil(c.count / 1000);
     }
   }
 }

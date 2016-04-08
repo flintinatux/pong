@@ -16,6 +16,9 @@
     "up":   "up",
     "down": "down"
   },
+  "Countdown": {
+    "count": 0
+  },
   "Goal": {},
   "Paddle": {},
   "Player": {
@@ -24,5 +27,8 @@
   },
   "Text": {
     "content": ""
+  },
+  "Timer": {
+    "time": 0
   }
 }

@@ -44,7 +44,7 @@
   },
   "Countdown": {
     "Countdown": {
-      "count": 5000
+      "count": 5
     },
     "Position": {
       "x": 50,
@@ -55,7 +55,10 @@
       "h": 8,
       "w": 8
     },
-    "Text": {}
+    "Text": {},
+    "Timer": {
+      "time": 1000
+    }
   },
   "Goal": {
     "Collision": {},

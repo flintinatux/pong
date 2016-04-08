@@ -7,5 +7,6 @@ module.exports = [
   require('./countdown'),
   require('./render-player'),
   require('./render-text'),
-  require('./scoring')
+  require('./scoring'),
+  require('./timer')
 ];
