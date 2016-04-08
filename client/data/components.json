@@ -1,8 +1,8 @@
 {
   "AI": {
-    "difficulty": 0.8,
+    "difficulty": 0.85,
     "factor": 0.35,
-    "maxFactor": 0.35,
+    "maxFactor": 0.5,
     "sign": 1,
     "vin": 0.4,
     "vout": 0.1

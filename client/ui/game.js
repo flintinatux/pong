@@ -14,12 +14,13 @@ exports.view = function(ctrl, args, extras) {
 function config(elem, isInit, ctx) {
   if (isInit) return;
   var manic   = Manic(elem, 0.52),
-      running = false;
+      running = true;
 
   manic.comps.define(components);
   manic.entities.define(templates);
   systems.forEach(manic.systems.define);
-  manic.scene(scenes.one);
+  manic.scene(scenes.demo);
+  manic.loop.start();
 
   window.addEventListener('keydown', pause);
 
