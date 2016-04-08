@@ -5,13 +5,11 @@ module.exports = {
   phase: 'render',
   deps:  ['Countdown', 'Text'],
 
-  update(id, [c, t], { comps, dom, entities }) {
-    var now = performance.now();
-    if (c.last) c.count -= now - c.last;
-    c.last = now;
+  update(id, [c, t], { comps, entities, loop }) {
+    c.count -= loop.step;
     if (c.count <= 0) {
       comps.add('Death', id);
-      entities.create(Ball())
+      setTimeout(function() { entities.create(Ball()) }, 250);
     } else {
       t.content = Math.ceil(c.count / 1000);
     }
