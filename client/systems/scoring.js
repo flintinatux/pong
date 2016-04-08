@@ -6,12 +6,12 @@ module.exports = {
   phase: 'physics',
   deps:  ['Goal', 'Contacts', 'Player'],
 
-  update(id, [g, contacts, player], { comps, manic }) {
+  update(id, [g, contacts, player], { comps, entities }) {
     for (var other in contacts) {
       if (!comps('Ball', other)) continue;
       events.emit('goal-scored', { player: player.name });
-      manic.stop();
-      manic.scene(scenes.one);
+      comps.add('Death', other);
+      entities.create({ type: 'Countdown' });
     }
   }
 };

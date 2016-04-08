@@ -10,7 +10,7 @@
   "Ball": {},
   "Blockable": {},
   "Bounce": {
-    "maxTheta": 0.4
+    "maxTheta": 0.5
   },
   "Controls": {
     "up":   "up",
@@ -21,5 +21,8 @@
   "Player": {
     "name": "none",
     "prev": null
+  },
+  "Text": {
+    "content": ""
   }
 }

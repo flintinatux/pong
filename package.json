@@ -15,7 +15,7 @@
     "prebuild": "npm run clean && mkdir -p dist",
     "prewatch": "npm run clean && mkdir -p dist",
     "prewatch:styles": "npm run build:styles",
-    "serve": "browser-sync start --port 5000 --server dist --files dist/ --no-open --no-notify --reload-delay 500 --reload-delay 500",
+    "serve": "browser-sync start --port 5500 --server dist --files dist/ --no-open --no-notify --reload-delay 500 --reload-delay 500",
     "test": "echo \"No tests yet\" && exit 0",
     "watch": "parallelshell 'npm run watch:markup' 'npm run watch:scripts' 'npm run watch:styles'",
     "watch:markup": "jade client/ -w -o dist",

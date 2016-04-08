@@ -1,15 +1,7 @@
 [
   {
-    "type": "Ball",
-    "state": {
-      "Motion": {
-        "vx": 0.6
-      },
-      "Position": {
-        "x": 50,
-        "y": 26
-      }
-    }
+    "type": "Countdown",
+    "state": {}
   },
   {
     "type": "Goal",

@@ -12,7 +12,10 @@
       "vmax": 0.8
     },
     "Player": {},
-    "Position": {},
+    "Position": {
+      "x": 50,
+      "y": 26
+    },
     "Render": {
       "className": "ball",
       "h": 2,
@@ -20,15 +23,10 @@
     }
   },
   "Computer": {
-    "AI": {
-      "difficulty": 1.2,
-      "maxFactor": 0.35,
-      "vin": 0.4,
-      "vout": 0.1
-    },
+    "AI": {},
     "Blockable": {},
     "Collision": {
-      "h": 10.8,
+      "h": 8.8,
       "w": 1.25
     },
     "Motion": {
@@ -40,23 +38,35 @@
     "Position": {},
     "Render": {
       "className": "paddle",
-      "h": 10,
+      "h": 8,
       "w": 1.25
     }
+  },
+  "Countdown": {
+    "Countdown": {
+      "count": 5000
+    },
+    "Position": {
+      "x": 50,
+      "y": 26
+    },
+    "Render": {
+      "className": "countdown",
+      "h": 8,
+      "w": 8
+    },
+    "Text": {}
   },
   "Goal": {
     "Collision": {},
     "Goal": {},
     "Player": {},
-    "Position": {},
-    "Render": {
-      "className": "wall"
-    }
+    "Position": {}
   },
   "Paddle": {
     "Blockable": {},
     "Collision": {
-      "h": 10.8,
+      "h": 8.8,
       "w": 1.25
     },
     "Controls": {},
@@ -69,7 +79,7 @@
     "Position": {},
     "Render": {
       "className": "paddle",
-      "h": 10,
+      "h": 8,
       "w": 1.25
     }
   },

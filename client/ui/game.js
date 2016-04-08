@@ -16,9 +16,9 @@ function config(elem, isInit, ctx) {
   var manic   = Manic(elem, 0.52),
       running = false;
 
-  manic.components(components);
-  manic.templates(templates);
-  systems.forEach(manic.system);
+  manic.comps.define(components);
+  manic.entities.define(templates);
+  systems.forEach(manic.systems.define);
   manic.scene(scenes.one);
 
   window.addEventListener('keydown', pause);
@@ -32,10 +32,10 @@ function config(elem, isInit, ctx) {
     if (keycode(e) !== 'space') return;
     if (running) {
       running = false;
-      manic.stop();
+      manic.loop.stop();
     } else {
       running = true;
-      manic.start();
+      manic.loop.start();
     }
   }
 }
