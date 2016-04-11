@@ -1,5 +1,8 @@
 [
   {
+    "type": "Countdown"
+  },
+  {
     "type": "Computer",
     "state": {
       "AI": {},
@@ -11,10 +14,6 @@
         "y": 26
       }
     }
-  },
-  {
-    "type": "Countdown",
-    "state": {}
   },
   {
     "type": "Goal",
@@ -70,34 +69,18 @@
   {
     "type": "Wall",
     "state": {
-      "Collision": {
-        "h": 2,
-        "w": 106
-      },
       "Position": {
         "x": 50,
-        "y": -1
-      },
-      "Render": {
-        "h": 2,
-        "w": 106
+        "y": 0
       }
     }
   },
   {
     "type": "Wall",
     "state": {
-      "Collision": {
-        "h": 2,
-        "w": 106
-      },
       "Position": {
         "x": 50,
-        "y": 53
-      },
-      "Render": {
-        "h": 2,
-        "w": 106
+        "y": 52
       }
     }
   }

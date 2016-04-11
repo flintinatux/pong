@@ -1,7 +1,32 @@
 [
   {
-    "type": "Countdown",
-    "state": {}
+    "type": "Countdown"
+  },
+  {
+    "type": "Computer",
+    "state": {
+      "AI": {},
+      "Player": {
+        "name": "one"
+      },
+      "Position": {
+        "x": 3,
+        "y": 26
+      }
+    }
+  },
+  {
+    "type": "Computer",
+    "state": {
+      "AI": {},
+      "Player": {
+        "name": "two"
+      },
+      "Position": {
+        "x": 97,
+        "y": 26
+      }
+    }
   },
   {
     "type": "Goal",
@@ -36,65 +61,23 @@
     }
   },
   {
-    "type": "Computer",
-    "state": {
-      "AI": {},
-      "Player": {
-        "name": "one"
-      },
-      "Position": {
-        "x": 3,
-        "y": 26
-      }
-    }
-  },
-  {
-    "type": "Computer",
-    "state": {
-      "AI": {},
-      "Player": {
-        "name": "two"
-      },
-      "Position": {
-        "x": 97,
-        "y": 26
-      }
-    }
-  },
-  {
     "type": "Spawner"
   },
   {
     "type": "Wall",
     "state": {
-      "Collision": {
-        "h": 2,
-        "w": 106
-      },
       "Position": {
         "x": 50,
-        "y": -1
-      },
-      "Render": {
-        "h": 2,
-        "w": 106
+        "y": 0
       }
     }
   },
   {
     "type": "Wall",
     "state": {
-      "Collision": {
-        "h": 2,
-        "w": 106
-      },
       "Position": {
         "x": 50,
-        "y": 53
-      },
-      "Render": {
-        "h": 2,
-        "w": 106
+        "y": 52
       }
     }
   }

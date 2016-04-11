@@ -5,7 +5,7 @@
       "maxTheta": 0.45
     },
     "Collision": {
-      "h": 2.6,
+      "h": 2,
       "w": 2.6
     },
     "Motion": {
@@ -26,7 +26,7 @@
     "AI": {},
     "Blockable": {},
     "Collision": {
-      "h": 8.8,
+      "h": 8,
       "w": 1.25
     },
     "Motion": {
@@ -87,7 +87,7 @@
   "Paddle": {
     "Blockable": {},
     "Collision": {
-      "h": 8.8,
+      "h": 8,
       "w": 1.25
     },
     "Controls": {},
@@ -114,11 +114,11 @@
     }
   },
   "Wall": {
-    "Collision": {},
-    "Position": {},
-    "Render": {
-      "className": "wall"
+    "Collision": {
+      "h": 0.8,
+      "w": 106
     },
+    "Position": {},
     "Wall": {}
   }
 }
