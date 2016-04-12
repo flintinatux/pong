@@ -64,7 +64,7 @@
     }
   },
   {
-    "type": "Spawner"
+    "type": "PowerupSpawner"
   },
   {
     "type": "Wall",

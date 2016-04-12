@@ -8,6 +8,7 @@ module.exports = [
   require('./lifespan'),
   require('./powerup'),
   require('./powerups/growth'),
+  require('./powerups/fastball'),
   require('./render/player'),
   require('./render/text'),
   require('./scoring'),

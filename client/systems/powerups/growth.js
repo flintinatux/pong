@@ -20,6 +20,11 @@ module.exports = {
     }
 
     growth.time -= loop.step;
-    if (growth.time <= 0) comps.remove('Growth', id);
+
+    if (
+      growth.time <= 0          ||
+      coll.h      >= growth.max ||
+      render.h    >= growth.max
+    ) comps.remove('Growth', id);
   }
 };

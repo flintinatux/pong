@@ -60,6 +60,25 @@
       "time": 1000
     }
   },
+  "Fastball": {
+    "Collision": {
+      "h": 3,
+      "w": 3
+    },
+    "Lifespan": {
+      "life": 15000
+    },
+    "Position": {},
+    "Powerup": {
+      "target": "Ball",
+      "type": "Fastball"
+    },
+    "Render": {
+      "className": "fastball",
+      "h": 3,
+      "w": 3
+    }
+  },
   "Goal": {
     "Collision": {},
     "Goal": {},
@@ -105,11 +124,12 @@
       "w": 1.25
     }
   },
-  "Spawner": {
+  "PowerupSpawner": {
     "Spawner": {
       "rate": 15000,
-      "time": 0,
+      "time": 5000,
       "types": [
+        "Fastball",
         "Growth"
       ]
     }

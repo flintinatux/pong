@@ -19,9 +19,13 @@
   "Countdown": {
     "count": 0
   },
+  "Fastball": {
+    "dvmax": 0.2
+  },
   "Goal": {},
   "Growth": {
     "delta": 2,
+    "max": 24,
     "time": 200
   },
   "Lifespan": {
