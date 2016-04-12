@@ -1,6 +1,6 @@
 {
   "AI": {
-    "difficulty": 0.85,
+    "difficulty": 0.9,
     "factor": 0.35,
     "maxFactor": 0.5,
     "sign": 1,
@@ -20,6 +20,10 @@
     "count": 0
   },
   "Goal": {},
+  "Growth": {
+    "delta": 2,
+    "time": 1000
+  },
   "Lifespan": {
     "life": 0
   },

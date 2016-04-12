@@ -3,10 +3,16 @@ module.exports = {
   phase: 'physics',
   deps:  ['Powerup', 'Contacts'],
 
-  update(id, [p, contacts], { comps }) {
+  update(id, [powerup, contacts], { comps }) {
     for (var other in contacts) {
       if (!comps('Ball', other)) continue;
-      console.log('Powerup acquired:', p.type);
+      var player = comps('Player', other);
+
+      for (var pid in comps('Paddle')) {
+        if (comps('Player', pid).name !== player.name) continue;
+        comps.add(powerup.type, pid);
+      }
+
       return comps.add('Death', id);
     }
   }

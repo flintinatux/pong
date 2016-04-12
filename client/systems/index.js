@@ -7,6 +7,7 @@ module.exports = [
   require('./countdown'),
   require('./lifespan'),
   require('./powerup'),
+  require('./powerups/growth'),
   require('./render/player'),
   require('./render/text'),
   require('./scoring'),

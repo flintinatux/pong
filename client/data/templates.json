@@ -66,7 +66,7 @@
     "Player": {},
     "Position": {}
   },
-  "Grow": {
+  "Growth": {
     "Collision": {
       "h": 3,
       "w": 3
@@ -76,10 +76,10 @@
     },
     "Position": {},
     "Powerup": {
-      "type": "Grow"
+      "type": "Growth"
     },
     "Render": {
-      "className": "grow",
+      "className": "growth",
       "h": 3,
       "w": 3
     }
@@ -109,7 +109,7 @@
       "rate": 15000,
       "time": 15000,
       "types": [
-        "Grow"
+        "Growth"
       ]
     }
   },
