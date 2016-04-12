@@ -10,10 +10,23 @@
   }
 }
 
+.powerup() {
+  border-radius: 0.4rem;
+}
+
 .ball {
   .ownable();
   background: @gray-10;
   border-radius: 50%;
+}
+
+.bullet {
+  background: @gray-10;
+}
+
+.bullets {
+  .powerup();
+  background: @gray-60;
 }
 
 .countdown {
@@ -22,13 +35,13 @@
 }
 
 .fastball {
+  .powerup();
   background: yellow;
-  border-radius: 0.4rem;
 }
 
 .growth {
+  .powerup();
   background: green;
-  border-radius: 0.4rem;
 }
 
 .paddle, .computer {

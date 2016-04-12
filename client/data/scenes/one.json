@@ -51,8 +51,9 @@
     "type": "Paddle",
     "state": {
       "Controls": {
-        "up": "w",
-        "down": "s"
+        "down": "s",
+        "fire": "d",
+        "up":   "w"
       },
       "Player": {
         "name": "one"

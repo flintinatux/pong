@@ -12,12 +12,24 @@
   "Bounce": {
     "maxTheta": 0.5
   },
+  "Bullets": {
+    "ammo": "Bullet",
+    "count": 30,
+    "rate":  75
+  },
   "Controls": {
-    "up":   "up",
-    "down": "down"
+    "down": "s",
+    "fire": "d",
+    "up":   "w"
   },
   "Countdown": {
     "count": 0
+  },
+  "Ephemeral": {
+    "xmin": 0,
+    "xmax": 100,
+    "ymin": 0,
+    "ymax": 52
   },
   "Fastball": {
     "dvmax": 0.2
@@ -27,6 +39,12 @@
     "delta": 2,
     "max": 24,
     "time": 200
+  },
+  "Gun": {
+    "ammo": "",
+    "count": 0,
+    "rate": 0,
+    "time": 0
   },
   "Lifespan": {
     "life": 0
@@ -54,5 +72,8 @@
   "Timer": {
     "time": 0
   },
-  "Wall": {}
+  "Wall": {},
+  "Weapon": {
+    "damage": 0
+  }
 }

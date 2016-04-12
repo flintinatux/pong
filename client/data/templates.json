@@ -22,6 +22,44 @@
       "w": 2
     }
   },
+  "Bullet": {
+    "Collision": {
+      "h": 0.4,
+      "w": 0.4
+    },
+    "Ephemeral": {},
+    "Motion": {
+      "vmax": 1.0
+    },
+    "Position": {},
+    "Render": {
+      "className": "bullet",
+      "h": 0.4,
+      "w": 0.4
+    },
+    "Weapon": {
+      "damage": 0.2,
+    }
+  },
+  "Bullets": {
+    "Collision": {
+      "h": 3,
+      "w": 3
+    },
+    "Lifespan": {
+      "life": 15000
+    },
+    "Position": {},
+    "Powerup": {
+      "target": "Paddle",
+      "type": "Bullets"
+    },
+    "Render": {
+      "className": "bullets",
+      "h": 3,
+      "w": 3
+    }
+  },
   "Computer": {
     "AI": {},
     "Blockable": {},
@@ -44,7 +82,7 @@
   },
   "Countdown": {
     "Countdown": {
-      "count": 5
+      "count": 4
     },
     "Position": {
       "x": 50,
@@ -106,6 +144,7 @@
   },
   "Paddle": {
     "Blockable": {},
+    "Bullets": {},
     "Collision": {
       "h": 8,
       "w": 1.25
@@ -129,6 +168,7 @@
       "rate": 15000,
       "time": 5000,
       "types": [
+        "Bullets",
         "Fastball",
         "Growth"
       ]
