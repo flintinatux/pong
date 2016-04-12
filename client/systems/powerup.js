@@ -8,7 +8,7 @@ module.exports = {
       if (!comps('Ball', other)) continue;
       var player = comps('Player', other);
 
-      for (var pid in comps('Paddle')) {
+      for (var pid in comps(powerup.target)) {
         if (comps('Player', pid).name !== player.name) continue;
         comps.add(powerup.type, pid);
       }

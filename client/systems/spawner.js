@@ -6,8 +6,6 @@ module.exports = {
   deps:  ['Spawner'],
 
   update(id, [s], { comps, entities, loop }) {
-    if (!Object.keys(comps('Ball')).length) return s.time = s.rate;
-
     s.time -= loop.step;
     if (s.time > 0) return;
 

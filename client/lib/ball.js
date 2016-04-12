@@ -5,7 +5,7 @@ const { randomSign } = require('../lib/util');
 var vmax = Ball.Motion.vmax;
 
 function factory() {
-  var theta = Bounce.maxTheta * Math.random();
+  var theta = Bounce.maxTheta * Math.random() / 2;
 
   return {
     type: 'Ball',

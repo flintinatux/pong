@@ -22,7 +22,7 @@
   "Goal": {},
   "Growth": {
     "delta": 2,
-    "time": 1000
+    "time": 200
   },
   "Lifespan": {
     "life": 0

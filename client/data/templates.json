@@ -72,10 +72,11 @@
       "w": 3
     },
     "Lifespan": {
-      "life": 10000
+      "life": 15000
     },
     "Position": {},
     "Powerup": {
+      "target": "Paddle",
       "type": "Growth"
     },
     "Render": {
@@ -107,7 +108,7 @@
   "Spawner": {
     "Spawner": {
       "rate": 15000,
-      "time": 15000,
+      "time": 0,
       "types": [
         "Growth"
       ]
