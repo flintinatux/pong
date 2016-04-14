@@ -7,7 +7,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build:markup && npm run build:scripts && npm run build:styles",
-    "build:markup": "jade client/ -o dist",
+    "build:markup": "jade client/ -o dist -O '{ prod: true }'",
     "build:scripts": "browserify client/app.js > dist/app.js",
     "build:styles": "lessc --glob client/app.less | postcss -u autoprefixer | cleancss --s0 > dist/app.css",
     "clean": "rm -rf dist/*",
@@ -16,6 +16,7 @@
     "prewatch": "npm run clean && mkdir -p dist",
     "prewatch:styles": "npm run build:styles",
     "serve": "browser-sync start --port 5500 --server dist --files dist/ --no-open --no-notify --reload-delay 500 --reload-delay 500",
+    "start": "http-server ./dist -d false",
     "test": "echo \"No tests yet\" && exit 0",
     "watch": "parallelshell 'npm run watch:markup' 'npm run watch:scripts' 'npm run watch:styles'",
     "watch:markup": "jade client/ -w -o dist",
@@ -28,26 +29,28 @@
     ]
   },
   "dependencies": {
-    "classnames": "^2.2.3",
-    "eventemitter3": "^1.2.0",
-    "keycode": "^2.1.1",
-    "lodash": "^4.7.0",
-    "mithril": "^0.2.3",
-    "normalize.css": "^4.0.0"
-  },
-  "devDependencies": {
     "autoprefixer": "^6.3.5",
-    "browser-sync": "^2.11.2",
     "browserify": "^13.0.0",
     "bulkify": "^1.2.0",
+    "classnames": "^2.2.3",
     "clean-css": "^3.4.10",
     "closurecompiler": "^1.5.2",
-    "eye": "0.0.3",
+    "eventemitter3": "^1.2.0",
+    "http-server": "^0.9.0",
     "jade": "^1.11.0",
+    "keycode": "^2.1.1",
     "less": "^2.6.1",
     "less-plugin-glob": "^1.1.1",
+    "lodash": "^4.7.0",
+    "manic": "github:flintinatux/manic",
+    "mithril": "^0.2.3",
+    "normalize.css": "^4.0.0",
+    "postcss-cli": "^2.5.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.11.2",
+    "eye": "0.0.3",
     "parallelshell": "^2.0.0",
-    "postcss-cli": "^2.5.1",
     "watchify": "^3.7.0"
   }
 }
