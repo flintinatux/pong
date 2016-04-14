@@ -1,12 +1,12 @@
 const templates = require('../data/templates');
 
 module.exports = {
-  name:  'Weapons',
+  name:  'Gun',
   phase: 'physics',
   deps:  ['Controls', 'Gun', 'Position'],
 
-  update(id, [ctrl, gun, pos], { comps, inputs, entities, loop }) {
-    if (!inputs.keys.has(ctrl.fire)) return;
+  update(id, [ctrl, gun, pos], { comps, entities, loop }) {
+    if (!ctrl.fire) return;
 
     gun.time -= loop.step;
     if (gun.time > 0) return;

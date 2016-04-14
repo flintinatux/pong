@@ -7,6 +7,7 @@ module.exports = [
   require('./countdown'),
   require('./ephemeral'),
   require('./gun'),
+  require('./input-map'),
   require('./lifespan'),
   require('./powerup'),
   require('./powerups/bullets'),
@@ -16,5 +17,6 @@ module.exports = [
   require('./render/text'),
   require('./scoring'),
   require('./spawner'),
-  require('./timer')
+  require('./timer'),
+  require('./weapon')
 ];

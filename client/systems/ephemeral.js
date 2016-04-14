@@ -1,13 +1,13 @@
 module.exports = {
   name:  'Ephemeral',
   phase: 'physics',
-  deps:  ['Ephemeral', 'Position', 'Render'],
+  deps:  ['Ephemeral', 'Position', 'Size'],
 
-  update(id, [e, p, r], { comps }) {
-    var l = p.x - r.w / 2,
-        r = p.x + r.w / 2,
-        t = p.y - r.h / 2,
-        b = p.y + r.h / 2;
+  update(id, [e, p, s], { comps }) {
+    var l = p.x - s.w / 2,
+        r = p.x + s.w / 2,
+        t = p.y - s.h / 2,
+        b = p.y + s.h / 2;
 
     if (
       l < e.xmin ||

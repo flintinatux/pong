@@ -5,8 +5,8 @@
       "maxTheta": 0.45
     },
     "Collision": {
-      "h": 2,
-      "w": 2.6
+      "ph": 0,
+      "pw": 0.3
     },
     "Motion": {
       "vmax": 0.8
@@ -17,35 +17,33 @@
       "y": 26
     },
     "Render": {
-      "className": "ball",
+      "className": "ball"
+    },
+    "Size": {
       "h": 2,
       "w": 2
     }
   },
   "Bullet": {
-    "Collision": {
-      "h": 0.4,
-      "w": 0.4
-    },
+    "Collision": {},
     "Ephemeral": {},
     "Motion": {
       "vmax": 1.0
     },
     "Position": {},
     "Render": {
-      "className": "bullet",
+      "className": "bullet"
+    },
+    "Size": {
       "h": 0.4,
       "w": 0.4
     },
     "Weapon": {
-      "damage": 0.2,
+      "damage": 1,
     }
   },
   "Bullets": {
-    "Collision": {
-      "h": 3,
-      "w": 3
-    },
+    "Collision": {},
     "Lifespan": {
       "life": 15000
     },
@@ -55,7 +53,9 @@
       "type": "Bullets"
     },
     "Render": {
-      "className": "bullets",
+      "className": "bullets"
+    },
+    "Size": {
       "h": 3,
       "w": 3
     }
@@ -63,19 +63,20 @@
   "Computer": {
     "AI": {},
     "Blockable": {},
-    "Collision": {
-      "h": 8,
-      "w": 1.25
-    },
+    "Collision": {},
+    "Controls": {},
+    "Health": {},
     "Motion": {
       "amax": 0.075,
-      "vmax": 0.4
+      "vmax": 0.36
     },
     "Paddle": {},
     "Player": {},
     "Position": {},
     "Render": {
-      "className": "paddle",
+      "className": "paddle"
+    },
+    "Size": {
       "h": 8,
       "w": 1.25
     }
@@ -89,7 +90,9 @@
       "y": 26
     },
     "Render": {
-      "className": "countdown",
+      "className": "countdown"
+    },
+    "Size": {
       "h": 8,
       "w": 8
     },
@@ -99,10 +102,7 @@
     }
   },
   "Fastball": {
-    "Collision": {
-      "h": 3,
-      "w": 3
-    },
+    "Collision": {},
     "Lifespan": {
       "life": 15000
     },
@@ -112,7 +112,9 @@
       "type": "Fastball"
     },
     "Render": {
-      "className": "fastball",
+      "className": "fastball"
+    },
+    "Size": {
       "h": 3,
       "w": 3
     }
@@ -121,13 +123,14 @@
     "Collision": {},
     "Goal": {},
     "Player": {},
-    "Position": {}
+    "Position": {},
+    "Size": {
+      "h": 52,
+      "w": 2
+    }
   },
   "Growth": {
-    "Collision": {
-      "h": 3,
-      "w": 3
-    },
+    "Collision": {},
     "Lifespan": {
       "life": 15000
     },
@@ -137,7 +140,9 @@
       "type": "Growth"
     },
     "Render": {
-      "className": "growth",
+      "className": "growth"
+    },
+    "Size": {
       "h": 3,
       "w": 3
     }
@@ -145,11 +150,10 @@
   "Paddle": {
     "Blockable": {},
     "Bullets": {},
-    "Collision": {
-      "h": 8,
-      "w": 1.25
-    },
+    "Collision": {},
     "Controls": {},
+    "Health": {},
+    "InputMap": {},
     "Motion": {
       "amax": 0.075,
       "vmax": 0.4
@@ -158,7 +162,9 @@
     "Player": {},
     "Position": {},
     "Render": {
-      "className": "paddle",
+      "className": "paddle"
+    },
+    "Size": {
       "h": 8,
       "w": 1.25
     }
@@ -176,10 +182,13 @@
   },
   "Wall": {
     "Collision": {
-      "h": 0.8,
-      "w": 106
+      "ph": 0.8
     },
     "Position": {},
+    "Size": {
+      "h": 0,
+      "w": 106
+    },
     "Wall": {}
   }
 }

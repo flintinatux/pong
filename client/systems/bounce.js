@@ -8,8 +8,8 @@ module.exports = {
       var side = contacts[other];
 
       if (comps('Wall', other)) {
-        if (side === 'top'    && m.vy < 0) return m.vy *= -1;
-        if (side === 'bottom' && m.vy > 0) return m.vy *= -1;
+        if (side === 'top'    && m.vy < 0) { m.vy *= -1; continue; }
+        if (side === 'bottom' && m.vy > 0) { m.vy *= -1; continue; }
         continue;
       }
 
@@ -18,10 +18,10 @@ module.exports = {
       if (side === 'left'   && m.vx > 0) continue;
       if (side === 'right'  && m.vx < 0) continue;
 
-      var c2 = comps('Collision', other),
-          p2 = comps('Position',  other),
+      var s2 = comps('Size', other),
+          p2 = comps('Position', other),
           dy = p1.y - p2.y,
-          theta = b.maxTheta * 2 * dy / c2.h;
+          theta = b.maxTheta * 2 * dy / s2.h;
 
       m.vx = m.vmax * Math.cos(theta) * -Math.sign(m.vx);
       m.vy = m.vmax * Math.sin(theta);

@@ -17,11 +17,7 @@
     "count": 30,
     "rate":  75
   },
-  "Controls": {
-    "down": "s",
-    "fire": "d",
-    "up":   "w"
-  },
+  "Controls": {},
   "Countdown": {
     "count": 0
   },
@@ -45,6 +41,14 @@
     "count": 0,
     "rate": 0,
     "time": 0
+  },
+  "Health": {
+    "hp": 100
+  },
+  "InputMap": {
+    "down": "s",
+    "fire": "d",
+    "up":   "w"
   },
   "Lifespan": {
     "life": 0

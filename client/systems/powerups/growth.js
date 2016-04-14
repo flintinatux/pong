@@ -1,13 +1,12 @@
 module.exports = {
   name:  'Grow',
   phase: 'physics',
-  deps:  ['Collision', 'Growth', 'Position', 'Render'],
+  deps:  ['Growth', 'Position', 'Size'],
 
-  update(id, [coll, growth, pos, render], { comps, loop }) {
+  update(id, [growth, pos, size], { comps, loop }) {
     growth.dh || (growth.dh = growth.delta * loop.step / growth.time);
 
-    coll.h   += growth.dh;
-    render.h += growth.dh;
+    size.h += growth.dh;
 
     var contacts = comps('Contacts', id);
     if (contacts) {
@@ -21,10 +20,7 @@ module.exports = {
 
     growth.time -= loop.step;
 
-    if (
-      growth.time <= 0          ||
-      coll.h      >= growth.max ||
-      render.h    >= growth.max
-    ) comps.remove('Growth', id);
+    if (growth.time <= 0 || size.h >= growth.max)
+      comps.remove('Growth', id);
   }
 };
