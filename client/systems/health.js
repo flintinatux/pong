@@ -4,6 +4,6 @@ module.exports = {
   deps:  ['Health', 'Size'],
 
   update(id, [health, size], ctx) {
-
+    size.h = health.hp * health.ratio;
   }
 };

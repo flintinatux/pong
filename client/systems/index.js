@@ -7,6 +7,7 @@ module.exports = [
   require('./countdown'),
   require('./ephemeral'),
   require('./gun'),
+  require('./health'),
   require('./input-map'),
   require('./lifespan'),
   require('./powerup'),

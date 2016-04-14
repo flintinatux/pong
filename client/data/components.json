@@ -4,7 +4,7 @@
     "factor": 0.35,
     "maxFactor": 0.5,
     "sign": 1,
-    "vin": 0.4,
+    "vin": 0.33,
     "vout": 0.1
   },
   "Ball": {},
@@ -14,7 +14,7 @@
   },
   "Bullets": {
     "ammo": "Bullet",
-    "count": 30,
+    "count": 20,
     "rate":  75
   },
   "Controls": {},
@@ -43,7 +43,8 @@
     "time": 0
   },
   "Health": {
-    "hp": 100
+    "hp": 100,
+    "ratio": 0.08
   },
   "InputMap": {
     "down": "s",
