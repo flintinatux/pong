@@ -32,8 +32,7 @@
   },
   "Goal": {},
   "Growth": {
-    "delta": 2,
-    "max": 24,
+    "hp": 20,
     "time": 200
   },
   "Gun": {
@@ -44,7 +43,9 @@
   },
   "Health": {
     "hp": 100,
-    "ratio": 0.08
+    "max": 250,
+    "min": 0,
+    "sizeRatio": 0.08
   },
   "InputMap": {
     "down": "s",

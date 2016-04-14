@@ -7,6 +7,6 @@ html
 
     link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css')
     link(rel='stylesheet' type='text/css' href='app.css')
-    script(type='text/javascript' src='app.js' defer)
+    script(type='text/javascript' src=( prod ? 'app-min.js' : 'app.js') defer)
   body
     #game.game

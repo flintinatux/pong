@@ -28,7 +28,7 @@
     "Collision": {},
     "Ephemeral": {},
     "Motion": {
-      "vmax": 1.0
+      "vmax": 1.6
     },
     "Position": {},
     "Render": {

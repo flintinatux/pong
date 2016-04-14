@@ -1,11 +1,11 @@
 module.exports = {
   name:  'Blockable',
   phase: 'physics',
-  deps:  ['Contacts', 'Motion', 'Blockable'],
+  deps:  ['Blockable', 'Contacts', 'Motion'],
 
-  update(id, [contacts, m], ctx) {
-    for (var id in contacts) {
-      var side = contacts[id];
+  update(id, [b, contacts, m], ctx) {
+    for (var other in contacts) {
+      var side = contacts[other];
 
       if (
         (side === 'top'    && (m.vy < 0 || m.ay < 0)) ||

@@ -1,26 +1,26 @@
 module.exports = {
   name:  'Grow',
   phase: 'physics',
-  deps:  ['Growth', 'Position', 'Size'],
+  deps:  ['Growth', 'Health', 'Position'],
 
-  update(id, [growth, pos, size], { comps, loop }) {
-    growth.dh || (growth.dh = growth.delta * loop.step / growth.time);
+  update(id, [growth, health, pos], { comps, loop }) {
+    growth.dhp || (growth.dhp = growth.hp * loop.step / growth.time);
 
-    size.h += growth.dh;
+    health.hp = Math.min(health.max, health.hp + growth.dhp);
 
     var contacts = comps('Contacts', id);
     if (contacts) {
       for (var other in contacts) {
         if (!comps('Wall', other)) continue;
         contacts[other] === 'top'
-          ? pos.y += growth.dh / 2
-          : pos.y -= growth.dh / 2;
+          ? pos.y += growth.dhp * health.sizeRatio / 2
+          : pos.y -= growth.dhp * health.sizeRatio / 2;
       }
     }
 
     growth.time -= loop.step;
 
-    if (growth.time <= 0 || size.h >= growth.max)
+    if (growth.time <= 0 || health.hp === health.max)
       comps.remove('Growth', id);
   }
 };
