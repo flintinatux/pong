@@ -64,12 +64,10 @@
     "AI": {},
     "Blockable": {},
     "Collision": {},
-    "Controls": {
-      "fire": true
-    },
+    "Controls": {},
     "Health": {},
     "Motion": {
-      "amax": 0.075,
+      "amax": 0.09,
       "vmax": 0.36
     },
     "Paddle": {},
@@ -184,7 +182,7 @@
   },
   "Wall": {
     "Collision": {
-      "ph": 0.8
+      "ph": 0.4
     },
     "Position": {},
     "Size": {

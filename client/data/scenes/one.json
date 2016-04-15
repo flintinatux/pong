@@ -5,7 +5,6 @@
   {
     "type": "Computer",
     "state": {
-      "AI": {},
       "Player": {
         "name": "two"
       },

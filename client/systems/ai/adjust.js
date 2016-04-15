@@ -1,7 +1,7 @@
-const { randomSign } = require('../lib/util');
+const { randomSign } = require('../../lib/util');
 
 module.exports = {
-  name:  'AdjustAI',
+  name:  'AI Adjustments',
   phase: 'physics',
   deps:  ['AI', 'Contacts'],
 
@@ -12,4 +12,4 @@ module.exports = {
       ai.sign   = randomSign();
     }
   }
-}
+};

@@ -1,5 +1,5 @@
 module.exports = {
-  name:  'AI',
+  name:  'AI Controls',
   phase: 'ai',
   deps:  ['AI', 'Controls', 'Motion', 'Player', 'Position', 'Size'],
 

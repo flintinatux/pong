@@ -1,6 +1,7 @@
 module.exports = [
-  require('./adjust-ai'),
-  require('./ai'),
+  require('./ai/adjust'),
+  require('./ai/controls'),
+  require('./ai/firing'),
   require('./blockable'),
   require('./bounce'),
   require('./controls'),
