@@ -1,5 +1,3 @@
-const sample = require('lodash/sample');
-
 module.exports = {
   name:  'Spawner',
   phase: 'ai',
@@ -9,11 +7,10 @@ module.exports = {
     s.time -= loop.step;
     if (s.time > 0) return;
 
-    s.time = s.rate;
     var { xmin, xmax, ymin, ymax } = s.area;
 
     entities.create({
-      type: sample(s.types),
+      type: s.types[s.next],
       state: {
         Position: {
           x: xmin + (xmax - xmin) * Math.random(),
@@ -21,5 +18,8 @@ module.exports = {
         }
       }
     });
+
+    s.next = (s.next + 1) % s.types.length;
+    s.time = s.rate;
   }
 };

@@ -32,8 +32,7 @@
   },
   "Goal": {},
   "Growth": {
-    "hp": 20,
-    "time": 200
+    "hp": 20
   },
   "Gun": {
     "ammo": "",
@@ -43,8 +42,9 @@
   },
   "Health": {
     "hp": 100,
-    "max": 250,
+    "max": 200,
     "min": 0,
+    "next": 100,
     "sizeRatio": 0.08
   },
   "InputMap": {
@@ -63,11 +63,12 @@
   "Powerup": {},
   "Spawner": {
     "area": {
-      "xmin": 10,
-      "xmax": 90,
+      "xmin": 30,
+      "xmax": 70,
       "ymin": 10,
       "ymax": 42
     },
+    "next": 0,
     "rate": 0,
     "time": 0,
     "types": []

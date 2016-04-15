@@ -149,7 +149,6 @@
   },
   "Paddle": {
     "Blockable": {},
-    "Bullets": {},
     "Collision": {},
     "Controls": {},
     "Health": {},

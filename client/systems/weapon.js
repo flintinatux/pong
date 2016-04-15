@@ -7,7 +7,7 @@ module.exports = {
     for (var other in contacts) {
       var health = comps('Health', other);
       if (!health) continue;
-      health.hp -= weapon.damage;
+      health.next -= weapon.damage;
       comps.add('Death', id);
       return;
     }
