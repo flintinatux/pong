@@ -64,7 +64,9 @@
     "AI": {},
     "Blockable": {},
     "Collision": {},
-    "Controls": {},
+    "Controls": {
+      "fire": true
+    },
     "Health": {},
     "Motion": {
       "amax": 0.075,
