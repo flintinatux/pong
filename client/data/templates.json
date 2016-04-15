@@ -67,7 +67,7 @@
     "Controls": {},
     "Health": {},
     "Motion": {
-      "amax": 0.06
+      "amax": 0.075
     },
     "Paddle": {},
     "Player": {},

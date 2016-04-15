@@ -9,11 +9,12 @@ module.exports = {
 
     var play2 = comps('Player',   ball),
         pos2  = comps('Position', ball),
-        delta = a.factor * size.h;
+        min   = pos1.y + a.sign * a.min * size.h,
+        max   = pos1.y + a.sign * a.max * size.h;
 
     m.vmax = a.difficulty * (play2.name === play1.name ? a.vout : a.vin);
 
-    ctrl.down = pos2.y > pos1.y + delta;
-    ctrl.up   = pos2.y < pos1.y - delta;
+    ctrl.down = pos2.y > Math.max(min, max);
+    ctrl.up   = pos2.y < Math.min(min, max);
   }
 };
