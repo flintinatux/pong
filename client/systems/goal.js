@@ -1,15 +1,17 @@
-const events = require('../lib/events');
-const scenes = require('../data/scenes');
-
 module.exports = {
-  name:  'Scoring',
+  name:  'Goal',
   phase: 'physics',
   deps:  ['Goal', 'Contacts', 'Player'],
 
   update(id, [g, contacts, player], { comps, entities }) {
     for (var other in contacts) {
       if (!comps('Ball', other)) continue;
-      events.emit('goal-scored', { player: player.name });
+
+      for (var _id in comps('Score')) {
+        if (comps('Player', _id).name === player.name)
+          comps('Score', _id).points++;
+      }
+
       comps.add('Death', other);
       entities.create({ type: 'Countdown' });
     }

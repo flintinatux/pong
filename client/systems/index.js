@@ -7,6 +7,7 @@ module.exports = [
   require('./controls'),
   require('./countdown'),
   require('./ephemeral'),
+  require('./goal'),
   require('./gun'),
   require('./health'),
   require('./input-map'),
@@ -17,7 +18,7 @@ module.exports = [
   require('./powerups/fastball'),
   require('./render/player'),
   require('./render/text'),
-  require('./scoring'),
+  require('./score'),
   require('./spawner'),
   require('./timer'),
   require('./weapon')
