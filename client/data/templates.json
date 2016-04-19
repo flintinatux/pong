@@ -24,6 +24,13 @@
       "w": 2
     }
   },
+  "Box": {
+    "Position": {},
+    "Render": {
+      "className": "box"
+    },
+    "Size": {}
+  },
   "Bullet": {
     "Collision": {},
     "Ephemeral": {},
@@ -173,9 +180,25 @@
       "time": 5000,
       "types": [
         "Bullets",
+        "Bullets",
         "Fastball",
         "Growth"
       ]
+    }
+  },
+  "Score": {
+    "Player": {},
+    "Position": {},
+    "Render": {
+      "className": "score"
+    },
+    "Score": {},
+    "Size": {
+      "h": 5,
+      "w": 10
+    },
+    "Text": {
+      "content": 0
     }
   },
   "Wall": {

@@ -18,5 +18,5 @@ exports.controller = function(args, extras) {
 };
 
 exports.view = function(ctrl, args, extras) {
-  return m('.score', { className: args.player }, ctrl.score());
+  return m('.old-score', { className: args.player }, ctrl.score());
 };

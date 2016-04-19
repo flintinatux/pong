@@ -1,5 +1,44 @@
 [
   {
+    "type": "Box",
+    "state": {
+      "Position": {
+        "x": 50,
+        "y": 26
+      },
+      "Size": {
+        "h": 52,
+        "w": 100
+      }
+    }
+  },
+  {
+    "type": "Box",
+    "state": {
+      "Position": {
+        "x": 5,
+        "y": 59
+      },
+      "Size": {
+        "h": 10,
+        "w": 10
+      }
+    }
+  },
+  {
+    "type": "Box",
+    "state": {
+      "Position": {
+        "x": 95,
+        "y": 59
+      },
+      "Size": {
+        "h": 10,
+        "w": 10
+      }
+    }
+  },
+  {
     "type": "Countdown"
   },
   {
@@ -52,6 +91,30 @@
   },
   {
     "type": "PowerupSpawner"
+  },
+  {
+    "type": "Score",
+    "state": {
+      "Player": {
+        "name": "one"
+      },
+      "Position": {
+        "x": 5,
+        "y": 59
+      }
+    }
+  },
+  {
+    "type": "Score",
+    "state": {
+      "Player": {
+        "name": "two"
+      },
+      "Position": {
+        "x": 95,
+        "y": 59
+      }
+    }
   },
   {
     "type": "Wall",

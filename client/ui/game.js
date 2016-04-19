@@ -13,7 +13,7 @@ exports.view = function(ctrl, args, extras) {
 
 function config(elem, isInit, ctx) {
   if (isInit) return;
-  var manic   = Manic(elem, 0.52),
+  var manic   = Manic(elem, 1.00),
       running = true;
 
   manic.comps.define(components);

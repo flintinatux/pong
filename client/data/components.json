@@ -61,6 +61,9 @@
     "prev": null
   },
   "Powerup": {},
+  "Score": {
+    "points": 0
+  },
   "Spawner": {
     "area": {
       "xmin": 30,

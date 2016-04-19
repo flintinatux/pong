@@ -10,14 +10,33 @@
   }
 }
 
+.ownable-text() {
+  &.one {
+    color: @bg-blue;
+  }
+
+  &.two {
+    color: @bg-red;
+  }
+}
+
 .powerup() {
   border-radius: 0.4rem;
+}
+
+.text() {
+  line-height: 1.0;
+  text-align: center;
 }
 
 .ball {
   .ownable();
   background: @gray-10;
   border-radius: 50%;
+}
+
+.box {
+  border: 1px solid @gray-10;
 }
 
 .bullet {
@@ -30,8 +49,7 @@
 }
 
 .countdown {
-  line-height: 1.0;
-  text-align: center;
+  .text();
 }
 
 .fastball {
@@ -48,6 +66,11 @@
   .ownable();
   background: @gray-20;
   border-radius: 0.4rem;
+}
+
+.score {
+  .ownable-text();
+  .text();
 }
 
 .wall {
